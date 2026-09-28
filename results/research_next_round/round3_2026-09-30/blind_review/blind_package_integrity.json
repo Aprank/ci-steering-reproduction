@@ -1,0 +1,58 @@
+{
+  "run_id": "round3_2026-09-30",
+  "generated_utc": "2026-09-28T20:08:42+00:00",
+  "source_final": "outputs/research_next_round/round2_2026-09-29/per_sample.final.jsonl",
+  "source_rows": 810,
+  "confaide_items": 270,
+  "join_problems": [],
+  "counts": {
+    "blind_items_total": 154,
+    "random_set": 50,
+    "diagnostic_set": 112,
+    "items_in_both_sets": 8,
+    "diagnostic_candidates_before_membership_merge": 112
+  },
+  "items_in_both_sets": [
+    "B0027",
+    "B0038",
+    "B0053",
+    "B0054",
+    "B0056",
+    "B0081",
+    "B0090",
+    "B0138"
+  ],
+  "membership_note": "v1 deduped across sets with a single membership and lost 7 diagnostic answers (112 -> 105); v2 keeps one blind item with a `sets` list, so an item can serve both purposes and must still be counted once per purpose",
+  "context_completeness": {
+    "story_present": true,
+    "prompt_present": true,
+    "distinct_story_hashes": 95,
+    "n_items_without_parsed_question": 11,
+    "items_without_parsed_question": [
+      "B0046",
+      "B0055",
+      "B0062",
+      "B0064",
+      "B0078",
+      "B0083",
+      "B0094",
+      "B0108",
+      "B0114",
+      "B0134",
+      "B0139"
+    ],
+    "question_missing_note": "for these items the closing question is the last sentence of `story` and is also present verbatim in `prompt_given_to_the_assistant.user`; no context is absent"
+  },
+  "story_repetition": {
+    "n_items": 154,
+    "n_distinct_stories": 95,
+    "n_stories_shown_more_than_once": 56,
+    "note": "the same scenario legitimately appears under several methods (and in both sets); the annotator does not see the method, but seeing one story twice can anchor a judgement. Recorded here so the analysis can check whether repeated-story items were judged consistently, instead of assuming the items are independent."
+  },
+  "authorization_fields": {
+    "benchmark_expected_present": true,
+    "human_confirmed_blank": true,
+    "note": "the benchmark's constructed expectation is NOT human ground truth; the human-confirmed column is what a primary analysis must use"
+  },
+  "no_model_labels": true
+}

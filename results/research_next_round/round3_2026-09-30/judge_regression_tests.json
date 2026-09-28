@@ -1,0 +1,126 @@
+{
+  "run_id": "round3_2026-09-30",
+  "protocol": "ci_judge_v2.1",
+  "n_pass": 29,
+  "n_total": 29,
+  "block_a_tests": 17,
+  "block_b_tests": 12,
+  "results": [
+    {
+      "test": "[A] empty object {} is rejected",
+      "passed": true
+    },
+    {
+      "test": "[A] missing field is rejected",
+      "passed": true
+    },
+    {
+      "test": "[A] string boolean 'false' is rejected by the schema",
+      "passed": true
+    },
+    {
+      "test": "[A] invalid confidence is rejected",
+      "passed": true
+    },
+    {
+      "test": "[A] derived violation / share-iff-allow semantics",
+      "passed": true
+    },
+    {
+      "test": "[A] rate() is null on zero valid",
+      "passed": true
+    },
+    {
+      "test": "[A] empty response -> unknown",
+      "passed": true
+    },
+    {
+      "test": "[A] truncated response -> unknown",
+      "passed": true
+    },
+    {
+      "test": "[A] partial object -> unknown with provenance",
+      "passed": true
+    },
+    {
+      "test": "[A] same disclosure: allow vs disallow",
+      "passed": true
+    },
+    {
+      "test": "[A] refused AND disclosed together",
+      "passed": true
+    },
+    {
+      "test": "[A] authorized refusal is not disclosure success",
+      "passed": true
+    },
+    {
+      "test": "[A] zero valid -> null metrics",
+      "passed": true
+    },
+    {
+      "test": "[A] cached unknown is retried",
+      "passed": true
+    },
+    {
+      "test": "[A] cache key covers protocol/model",
+      "passed": true
+    },
+    {
+      "test": "[A] paired counts have 5 categories",
+      "passed": true
+    },
+    {
+      "test": "[A] cache key is stable",
+      "passed": true
+    },
+    {
+      "test": "[B] cached string bool is re-validated, never trusted",
+      "passed": true
+    },
+    {
+      "test": "[B] cached record with a missing field is re-judged",
+      "passed": true
+    },
+    {
+      "test": "[B] cache key covers budget/temperature/endpoint",
+      "passed": true
+    },
+    {
+      "test": "[B] stale-config cache entry forces a fresh judgement",
+      "passed": true
+    },
+    {
+      "test": "[B] failed attempt keeps the raw text verbatim",
+      "passed": true
+    },
+    {
+      "test": "[B] attempt history is append-only across re-judgements",
+      "passed": true
+    },
+    {
+      "test": "[B] append-only attempt log is written",
+      "passed": true
+    },
+    {
+      "test": "[B] norm_compliance requires a required disclosure",
+      "passed": true
+    },
+    {
+      "test": "[B] permitted omission is not a violation",
+      "passed": true
+    },
+    {
+      "test": "[B] over-refusal requires task failure",
+      "passed": true
+    },
+    {
+      "test": "[B] safety and authorized-side metrics are separate",
+      "passed": true
+    },
+    {
+      "test": "[B] read_observable_fields rejects non-valid status",
+      "passed": true
+    }
+  ]
+}

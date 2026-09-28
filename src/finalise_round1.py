@@ -174,8 +174,87 @@ def method_summary(recs):
     }
 
 
-def bootstrap_paired(base, meth, unit="scenario", n_boot=2000, seed=42):
-    """Cluster bootstrap over the chosen independent unit; None is never coerced."""
+def story_groups(rows, confaide_dir="data/confaide"):
+    """Assign every scenario to a GROUP and prove the grouping is real.
+
+    The reviewer's objection (ROUND2_REVIEW.md, P2) was that `unit="scenario"` was
+    only a label: the bootstrap resampled individual scenario pairs while the note
+    asserted they were independent.  A cluster bootstrap is only valid if the
+    clusters are genuine, so this function derives the cluster from the SOURCE
+    story text and reports what it found instead of assuming it.
+
+    Returns (scenario_id -> group_id, independence report).
+    """
+    from src.data.confaide_loader import ConfaideLoader
+    items = ConfaideLoader(str(REPO / confaide_dir)).load_tier3()
+    rep = {"n_source_stories": len(items), "grouping_definition":
+           "sha256(story text)[:16] of the CONFAIDE Tier-3 item"}
+
+    gid, problems, hash_of = {}, [], {}
+    for r in rows:
+        sid = r["scenario_id"]
+        i = r.get("index_in_order")
+        if i is None:
+            try:
+                i = int(sid.rsplit("_", 1)[1])
+            except Exception:
+                problems.append((sid, "no index"))
+                continue
+        if i >= len(items):
+            problems.append((sid, f"index {i} out of range"))
+            continue
+        h = hashlib.sha256(items[i].story.encode()).hexdigest()[:16]
+        gid[sid] = h
+        hash_of[sid] = h
+
+    sizes = Counter(gid.values())
+    multi = {h: n for h, n in sizes.items() if n > 1}
+    rep["n_scenarios"] = len(gid)
+    rep["n_distinct_story_groups"] = len(sizes)
+    rep["groups_with_more_than_one_scenario"] = multi
+    rep["duplicate_story_hashes"] = len(multi)
+    rep["scenarios_are_independent_units"] = (not multi) and (not problems)
+    rep["problems"] = problems[:5]
+    rep["note"] = ("If every scenario maps to its own distinct story the per-scenario "
+                   "bootstrap IS a cluster bootstrap over story groups; the code now "
+                   "resamples groups explicitly so the two cannot drift apart.")
+    # a second, looser grouping: same (about, questionee, questioner, topic, secret)
+    meta_grp = defaultdict(set)
+    for r in rows:
+        i = r.get("index_in_order")
+        if i is None or i >= len(items):
+            continue
+        it = items[i]
+        meta_grp[(it.about, it.questionee, it.questioner, it.topic, it.secret_topic)].add(
+            r["scenario_id"])
+    rep["role_topic_secret_groups_with_more_than_one_scenario"] = {
+        "|".join(map(str, k)): sorted(v) for k, v in meta_grp.items() if len(v) > 1}
+
+    # Sensitivity grouping: also merge scenarios that share (about, questionee,
+    # questioner, topic, secret) even though their stories differ.  Distinct story
+    # text does not by itself prove that two items are unrelated, so this is run as
+    # an explicit contrast rather than waved away with the word "cluster".
+    gid_loose = dict(gid)
+    for key, sids in meta_grp.items():
+        if len(sids) > 1:
+            merged = min(sids)
+            for sid in sids:
+                gid_loose[sid] = f"MERGED::{merged}"
+    rep["n_distinct_groups_loose"] = len(set(gid_loose.values()))
+    rep["loose_grouping_reason"] = ("scenarios sharing (about, questionee, questioner, "
+                                    "topic, secret) are merged into one cluster")
+    return gid, gid_loose, rep
+
+
+def bootstrap_paired(base, meth, unit="scenario", n_boot=2000, seed=42, groups=None):
+    """Cluster bootstrap over the independent unit; None is never coerced.
+
+    `groups` maps scenario_id -> cluster id.  When it is supplied the clusters are
+    resampled WITH replacement and every pair inside a sampled cluster is taken,
+    which is the correct cluster bootstrap; when a cluster holds several scenarios
+    this differs from the naive per-pair resampling that v1 performed while
+    claiming to be grouped.
+    """
     b = {r["scenario_id"]: r for r in base}
     m = {r["scenario_id"]: r for r in meth}
     pairs = []
@@ -185,24 +264,44 @@ def bootstrap_paired(base, meth, unit="scenario", n_boot=2000, seed=42):
     valid = [(s, vb, vm) for s, vb, vm in pairs if vb is not None and vm is not None]
     if not valid:
         return {"available": False}
+
+    if groups:
+        by_group = defaultdict(list)
+        for s, vb, vm in valid:
+            by_group[groups.get(s, s)].append((s, vb, vm))
+    else:
+        by_group = {s: [(s, vb, vm)] for s, vb, vm in valid}
+    # order clusters by their first scenario id: with all-singleton clusters this
+    # makes the grouped and ungrouped draws bit-identical, so the equality check
+    # below is a real check rather than an artefact of ordering
+    clusters = sorted(by_group, key=lambda c: by_group[c][0][0])
+
     rng = random.Random(seed)
     deltas = []
     for _ in range(n_boot):
-        sample = [valid[rng.randrange(len(valid))] for _ in range(len(valid))]
+        picked = [clusters[rng.randrange(len(clusters))] for _ in range(len(clusters))]
+        sample = [p for c in picked for p in by_group[c]]
         d = sum(1 for _, vb, vm in sample if vm and not vb) - \
             sum(1 for _, vb, vm in sample if vb and not vm)
         deltas.append(d / len(sample))
     deltas.sort()
+    observed = (sum(1 for _, vb, vm in valid if vm and not vb) -
+                sum(1 for _, vb, vm in valid if vb and not vm)) / len(valid)
     return {
         "available": True,
         "unit": unit,
         "n_valid_pairs": len(valid),
-        "paired_delta_observed": (sum(1 for _, vb, vm in valid if vm and not vb) -
-                                  sum(1 for _, vb, vm in valid if vb and not vm)) / len(valid),
+        "n_clusters": len(clusters),
+        "cluster_sizes": dict(Counter(len(v) for v in by_group.values())),
+        "resampling": ("clusters drawn with replacement; all pairs inside a drawn cluster "
+                       "are included" if groups else
+                       "one pair per cluster (grouping map not supplied)"),
+        "paired_delta_observed": observed,
         "bootstrap_ci95": [deltas[int(0.025 * n_boot)], deltas[int(0.975 * n_boot) - 1]],
         "n_boot": n_boot, "seed": seed,
-        "note": ("Cluster bootstrap over CONFAIDE Tier-3 scenarios (each scenario is the "
-                 "independent unit); assumes fixed judge labels, not human truth."),
+        "note": ("Cluster bootstrap over distinct CONFAIDE Tier-3 STORIES (see "
+                 "independence_check for whether stories really are unique); assumes "
+                 "fixed judge labels, not human truth."),
     }
 
 
@@ -210,6 +309,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--audit-dir", default="outputs/audit_confaide/confaide_Qwen2.5-7B-Instruct")
     ap.add_argument("--out-dir", default=f"outputs/research_next_round/{RUN_ID}")
+    ap.add_argument("--confaide-dir", default="data/confaide")
     args = ap.parse_args()
 
     act_dir = REPO / args.audit_dir
@@ -247,13 +347,23 @@ def main():
         summary["methods"][m] = method_summary(by_method[m])
 
     base = by_method["No Steering"]
+    # real story-based groups, plus a report on whether the grouping is genuine
+    groups, groups_loose, independence = story_groups(final, args.confaide_dir)
+    summary["grouping"] = independence
     for m in methods[1:]:
         pc = paired_counts(
             [{"scenario_id": r["scenario_id"], "leaked_v1": r["leaked_v1"]} for r in base],
             [{"scenario_id": r["scenario_id"], "leaked_v1": r["leaked_v1"]} for r in by_method[m]],
             field_name="leaked_v1")
         summary["paired_vs_No Steering"][m] = pc
-        summary["bootstrap_vs_No Steering"][m] = bootstrap_paired(base, by_method[m])
+        summary["bootstrap_vs_No Steering"][m] = bootstrap_paired(
+            base, by_method[m], unit="story", groups=groups)
+        summary["bootstrap_per_record_contrast"] = summary.get(
+            "bootstrap_per_record_contrast", {})
+        summary["bootstrap_per_record_contrast"][m] = bootstrap_paired(
+            base, by_method[m], unit="record (unclustered contrast)", groups=None)
+        summary.setdefault("bootstrap_loose_groups_sensitivity", {})[m] = bootstrap_paired(
+            base, by_method[m], unit="story + role/topic/secret merge", groups=groups_loose)
 
     # ---- automatic consistency checks vs the independent recalculation ----
     checks = {"invariants": {}, "reference_match": {}}
@@ -269,6 +379,23 @@ def main():
             inv[f"{m}: valid_pairs + unknown == n"] = (pc["valid_pairs"] +
                                                        pc["unknown_pairs"] == ms["n"])
     inv["all_fields"] = all(inv.values())
+
+    # grouping is checked, not asserted: with one distinct story per scenario the
+    # cluster bootstrap has exactly one cluster per pair, so grouped and ungrouped
+    # resampling must agree numerically — if they ever disagree, the grouping is
+    # not what the note claims.
+    checks["grouping_independence"] = independence
+    inv["stories_are_unique_so_clusters_are_singletons"] = independence[
+        "scenarios_are_independent_units"]
+    for m in methods[1:]:
+        g = summary["bootstrap_vs_No Steering"][m]
+        u = summary["bootstrap_per_record_contrast"][m]
+        inv[f"{m}: grouped clusters == valid pairs"] = (g["n_clusters"] == g["n_valid_pairs"])
+        inv[f"{m}: grouped and ungrouped CI agree"] = (
+            g["bootstrap_ci95"] == u["bootstrap_ci95"])
+        ls = summary["bootstrap_loose_groups_sensitivity"][m]
+        inv[f"{m}: loose-group CI reported"] = ls["available"]
+    checks["invariants"] = inv
 
     for m, ref in REFERENCE["after_rejudge_overlay"].items():
         ms = summary["methods"][m]

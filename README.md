@@ -64,23 +64,34 @@
 .
 ├── README.md
 ├── src/                    复现与审计代码（官方代码 + 修改 + 新增工具）
-│   ├── audit_leakage.py            ★ 新增：unknown-aware 泄漏审计
-│   ├── subspace_selectivity.py     ★ 新增：LDA 交叉投影（含 --nested 折内协议）
-│   ├── ci_sign_determination.py    ★ 新增：CI 方向符号穷举
-│   ├── evaluation/ci_eval.py       ★ 已修：unknown 处理 + valid-only + 边界
+│   ├── pipeline.py                 ★ 流水线 CLI（显式路径，见第四节）
+│   ├── evaluation/ci_judge_v2.py   ★ 评委协议 v2.1（授权感知 + 严格 schema + 缓存复校验）
+│   ├── pilot_scenarios_v3.py       ★ 场景数据 v3（三实体 + 完整交叉 + 真实 C4）
+│   ├── build_blind_package_v2.py   ★ 盲审包 v2（完整故事 + 原提示 + 一对多成员）
+│   ├── subspace_selectivity_v3.py  ★ LDA 联合分组（三种协议 + 断言 + 层稳健性）
+│   ├── finalise_round1.py          ★ 最终记录 + 真实故事分组 bootstrap
+│   ├── validate_judge_real.py      ★ 真实 API 小样本评委核对
+│   ├── verify_grouping_claims.py   ★ 三参数刺激集重叠度量
+│   ├── verify_scenario_independence.py ★ 场景独立性与盲审集合核算
+│   ├── audit_leakage.py            新增：unknown-aware 泄漏审计
+│   ├── ci_sign_determination.py    新增：CI 方向符号穷举
+│   ├── evaluation/ci_eval.py       v1 评委（历史保留，勿用其默认入口）
 │   ├── control/ reading/ extraction/ utils/ data/
 │   └── ...                        官方流水线各阶段脚本
+├── tests/test_ci_judge_v2.py  29 项离线回归测试（原 17 + 复核反例 12）
 ├── data/stimuli/            刺激数据（概念 1000 / 行为 200 / CI 1500）
+├── data/pilot_v3/           场景数据 v3（160 条输入 + 契约检查 + 人工核查表）
 ├── reports/                 全部分析与审计报告（md）
-└── results/                 小型结果数据（JSON/JSONL/PNG，约 4.6 MB）
+└── results/                 小型结果数据（JSON/JSONL/PNG）；= 工作区的 outputs/
 ```
 
 ### 报告导航（`reports/`）
 
 | 文件 | 内容 |
 |---|---|
-| **`ROUND2_REPORT.md`** | **第二轮（T0–T7）：评委授权感知修复、最终记录、LDA 更正、盲审包、关系型场景** — 所有结论标注 实测/代码检查/推断/未验证 |
-| `AUDIT_REPORT.md` | 第一轮评测审计（步骤 1–5）；**部分声明已在 ROUND2_REPORT.md 中降级更正** |
+| **`ROUND3_REPORT.md`** | **第三轮：复核报告 P1×5 / P2×3 逐条核验与修复；评委协议 v2.1、场景数据 v3、盲审包 v2、联合分组 LDA、真实分组 bootstrap、9 例真实 API 评委核对** — 每条声明标注 实测/代码检查/推断/未验证 |
+| `ROUND2_REPORT.md` | 第二轮（T0–T7）：评委授权感知修复、最终记录、LDA 更正、盲审包、关系型场景 |
+| `AUDIT_REPORT.md` | 第一轮评测审计（步骤 1–5）；**部分声明已在 ROUND2/ROUND3 报告中降级或更正** |
 | `EXPERIMENT_REPORT.md` | 完整复现实验报告 |
 | `REPRODUCTION_RESULTS.md` | 复现结果汇总 |
 | `FINDING3_VERIFICATION.md` | Finding 3 专项验证（含全部代码修改记录） |
@@ -137,6 +148,23 @@ python src/subspace_selectivity.py --activations-dir outputs/activations/Qwen2.5
 git clone https://github.com/skywalker023/confaide.git data/confaide
 git clone https://github.com/HKUST-KnowComp/PrivaCI-Bench.git data/privaci_bench
 ```
+
+---
+
+### 流水线 CLI（推荐入口）
+
+```bash
+python src/pipeline.py --list
+python src/pipeline.py judge-tests        # 29 项离线评委回归测试
+python src/pipeline.py finalise           # -> outputs/research_next_round/<run-id>/final_records
+python src/pipeline.py scenarios          # -> data/pilot_v3/
+python src/pipeline.py blind --n-random 50
+python src/pipeline.py lda --permutations 60
+python src/pipeline.py judge-validate --cases 9    # 需 DEEPSEEK_API_KEY
+```
+
+**路径约定**：`outputs/` 是工作产物；`results/` 是公开仓库中的镜像。CLI 运行前会打印解析后的
+输出路径与完整命令。v1/v2 历史脚本保留在磁盘上，但 **CLI 永不调用**它们。
 
 ---
 

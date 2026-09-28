@@ -1,0 +1,196 @@
+{
+  "invariants": {
+    "Standard Steering: valid_pairs == sum of 4 cells": true,
+    "Standard Steering: valid_pairs + unknown == n": true,
+    "CI-Parametric (all): valid_pairs == sum of 4 cells": true,
+    "CI-Parametric (all): valid_pairs + unknown == n": true,
+    "all_fields": true,
+    "stories_are_unique_so_clusters_are_singletons": true,
+    "Standard Steering: grouped clusters == valid pairs": true,
+    "Standard Steering: grouped and ungrouped CI agree": true,
+    "Standard Steering: loose-group CI reported": true,
+    "CI-Parametric (all): grouped clusters == valid pairs": true,
+    "CI-Parametric (all): grouped and ungrouped CI agree": true,
+    "CI-Parametric (all): loose-group CI reported": true
+  },
+  "reference_match": {
+    "No Steering": {
+      "valid": [
+        270,
+        270,
+        true
+      ],
+      "unknown": [
+        0,
+        0,
+        true
+      ],
+      "leaks": [
+        116,
+        116,
+        true
+      ],
+      "rate": [
+        0.42962962962962964,
+        0.42962962962962964,
+        true
+      ],
+      "cache_hits": [
+        242,
+        242,
+        true
+      ],
+      "cache_hit_leaks": [
+        96,
+        96,
+        true
+      ]
+    },
+    "Standard Steering": {
+      "valid": [
+        270,
+        270,
+        true
+      ],
+      "unknown": [
+        0,
+        0,
+        true
+      ],
+      "leaks": [
+        118,
+        118,
+        true
+      ],
+      "rate": [
+        0.43703703703703706,
+        0.43703703703703706,
+        true
+      ],
+      "cache_hits": [
+        255,
+        255,
+        true
+      ],
+      "cache_hit_leaks": [
+        107,
+        107,
+        true
+      ]
+    },
+    "CI-Parametric (all)": {
+      "valid": [
+        267,
+        267,
+        true
+      ],
+      "unknown": [
+        3,
+        3,
+        true
+      ],
+      "leaks": [
+        136,
+        136,
+        true
+      ],
+      "rate": [
+        0.5093632958801498,
+        0.5093632958801498,
+        true
+      ],
+      "cache_hits": [
+        224,
+        224,
+        true
+      ],
+      "cache_hit_leaks": [
+        102,
+        102,
+        true
+      ]
+    },
+    "paired:Standard Steering": {
+      "counts": [
+        {
+          "00": 146,
+          "01": 8,
+          "10": 6,
+          "11": 110
+        },
+        {
+          "00": 146,
+          "01": 8,
+          "10": 6,
+          "11": 110
+        },
+        true
+      ],
+      "valid_pairs": [
+        270,
+        270,
+        true
+      ],
+      "mcnemar_p": [
+        0.79052734375,
+        0.79052734375,
+        true
+      ]
+    },
+    "paired:CI-Parametric (all)": {
+      "counts": [
+        {
+          "00": 113,
+          "01": 38,
+          "10": 18,
+          "11": 98
+        },
+        {
+          "00": 113,
+          "01": 38,
+          "10": 18,
+          "11": 98,
+          "unknown": 3
+        },
+        true
+      ],
+      "valid_pairs": [
+        267,
+        267,
+        true
+      ],
+      "mcnemar_p": [
+        0.010454818321892184,
+        0.010454818321892184,
+        true
+      ]
+    }
+  },
+  "grouping_independence": {
+    "n_source_stories": 270,
+    "grouping_definition": "sha256(story text)[:16] of the CONFAIDE Tier-3 item",
+    "n_scenarios": 270,
+    "n_distinct_story_groups": 270,
+    "groups_with_more_than_one_scenario": {},
+    "duplicate_story_hashes": 0,
+    "scenarios_are_independent_units": true,
+    "problems": [],
+    "note": "If every scenario maps to its own distinct story the per-scenario bootstrap IS a cluster bootstrap over story groups; the code now resamples groups explicitly so the two cannot drift apart.",
+    "role_topic_secret_groups_with_more_than_one_scenario": {
+      "Daniel|Sarah|Tony|infidelity|Infidelity": [
+        "confaide_t3_037",
+        "confaide_t3_052"
+      ]
+    },
+    "n_distinct_groups_loose": 269,
+    "loose_grouping_reason": "scenarios sharing (about, questionee, questioner, topic, secret) are merged into one cluster"
+  },
+  "historical_discrepancy": {
+    "historical_report_leaks": 104,
+    "audit_cache_hit_leaks": 96,
+    "rows_not_in_historical_cache": 28,
+    "explained_if_all_misses_were_failures": 96,
+    "unexplained_leaks": 8,
+    "statement": "Cache misses cannot be equated with historical parse failures: the old report recorded 104 baseline leaks while only 96 are present among the cache hits, so at least 8 further leaks lived in rows whose judge prompt hash does not match today's regeneration (response drift, prompt drift or cache gaps). The remainder is NOT fully attributable."
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "run_id": "round2_2026-09-29",
+  "generated_utc": "2026-09-28T20:08:39+00:00",
+  "source_dir": "outputs/audit_confaide/confaide_Qwen2.5-7B-Instruct",
+  "provenance_note": "Judge labels are automated (DeepSeek v1 protocol) and NOT human-validated. `leaked_v1` keeps the historical semantics ('reveals or strongly implies the private detail'). For the 16 overlay-recovered rows only status/leaked survive; refused/appropriate/raw_content are marked unrecoverable and are NOT stitched with stale values.",
+  "methods": {
+    "No Steering": {
+      "n": 270,
+      "n_valid": 270,
+      "n_unknown": 0,
+      "valid_rate": 1.0,
+      "unknown_rate": 0.0,
+      "n_leaked_confirmed": 116,
+      "leak_rate_valid_only": 0.42962962962962964,
+      "leak_bounds_over_all_n": [
+        0.42962962962962964,
+        0.42962962962962964
+      ],
+      "cache_hits": 242,
+      "cache_hit_leaks": 96,
+      "rows_not_in_historical_cache": 28,
+      "rows_judged_fresh_in_audit": 25,
+      "rows_recovered_from_rejudge": 3,
+      "label_provenance": "automated LLM judge only; NOT human-validated. 'not found in the historical cache' is not evidence of a historical parse failure."
+    },
+    "Standard Steering": {
+      "n": 270,
+      "n_valid": 270,
+      "n_unknown": 0,
+      "valid_rate": 1.0,
+      "unknown_rate": 0.0,
+      "n_leaked_confirmed": 118,
+      "leak_rate_valid_only": 0.43703703703703706,
+      "leak_bounds_over_all_n": [
+        0.43703703703703706,
+        0.43703703703703706
+      ],
+      "cache_hits": 255,
+      "cache_hit_leaks": 107,
+      "rows_not_in_historical_cache": 15,
+      "rows_judged_fresh_in_audit": 13,
+      "rows_recovered_from_rejudge": 2,
+      "label_provenance": "automated LLM judge only; NOT human-validated. 'not found in the historical cache' is not evidence of a historical parse failure."
+    },
+    "CI-Parametric (all)": {
+      "n": 270,
+      "n_valid": 267,
+      "n_unknown": 3,
+      "valid_rate": 0.9888888888888889,
+      "unknown_rate": 0.011111111111111112,
+      "n_leaked_confirmed": 136,
+      "leak_rate_valid_only": 0.5093632958801498,
+      "leak_bounds_over_all_n": [
+        0.5037037037037037,
+        0.5148148148148148
+      ],
+      "cache_hits": 224,
+      "cache_hit_leaks": 102,
+      "rows_not_in_historical_cache": 46,
+      "rows_judged_fresh_in_audit": 32,
+      "rows_recovered_from_rejudge": 11,
+      "label_provenance": "automated LLM judge only; NOT human-validated. 'not found in the historical cache' is not evidence of a historical parse failure."
+    }
+  },
+  "paired_vs_No Steering": {
+    "Standard Steering": {
+      "field": "leaked_v1",
+      "valid_pairs": 270,
+      "counts_00_neither": 146,
+      "counts_01_only_method": 8,
+      "counts_10_only_baseline": 6,
+      "counts_11_both": 110,
+      "unknown_pairs": 0,
+      "paired_delta": 0.007407407407407408,
+      "mcnemar_exact_two_sided_p": 0.79052734375,
+      "note": "Exploratory; assumes independent scenario pairs and fixed judge labels, not human-validated truth."
+    },
+    "CI-Parametric (all)": {
+      "field": "leaked_v1",
+      "valid_pairs": 267,
+      "counts_00_neither": 113,
+      "counts_01_only_method": 38,
+      "counts_10_only_baseline": 18,
+      "counts_11_both": 98,
+      "unknown_pairs": 3,
+      "paired_delta": 0.0749063670411985,
+      "mcnemar_exact_two_sided_p": 0.010454818321892184,
+      "note": "Exploratory; assumes independent scenario pairs and fixed judge labels, not human-validated truth."
+    }
+  },
+  "bootstrap_vs_No Steering": {
+    "Standard Steering": {
+      "available": true,
+      "unit": "story",
+      "n_valid_pairs": 270,
+      "n_clusters": 270,
+      "cluster_sizes": {
+        "1": 270
+      },
+      "resampling": "clusters drawn with replacement; all pairs inside a drawn cluster are included",
+      "paired_delta_observed": 0.007407407407407408,
+      "bootstrap_ci95": [
+        -0.018518518518518517,
+        0.037037037037037035
+      ],
+      "n_boot": 2000,
+      "seed": 42,
+      "note": "Cluster bootstrap over distinct CONFAIDE Tier-3 STORIES (see independence_check for whether stories really are unique); assumes fixed judge labels, not human truth."
+    },
+    "CI-Parametric (all)": {
+      "available": true,
+      "unit": "story",
+      "n_valid_pairs": 267,
+      "n_clusters": 267,
+      "cluster_sizes": {
+        "1": 267
+      },
+      "resampling": "clusters drawn with replacement; all pairs inside a drawn cluster are included",
+      "paired_delta_observed": 0.0749063670411985,
+      "bootstrap_ci95": [
+        0.02247191011235955,
+        0.12734082397003746
+      ],
+      "n_boot": 2000,
+      "seed": 42,
+      "note": "Cluster bootstrap over distinct CONFAIDE Tier-3 STORIES (see independence_check for whether stories really are unique); assumes fixed judge labels, not human truth."
+    }
+  },
+  "grouping": {
+    "n_source_stories": 270,
+    "grouping_definition": "sha256(story text)[:16] of the CONFAIDE Tier-3 item",
+    "n_scenarios": 270,
+    "n_distinct_story_groups": 270,
+    "groups_with_more_than_one_scenario": {},
+    "duplicate_story_hashes": 0,
+    "scenarios_are_independent_units": true,
+    "problems": [],
+    "note": "If every scenario maps to its own distinct story the per-scenario bootstrap IS a cluster bootstrap over story groups; the code now resamples groups explicitly so the two cannot drift apart.",
+    "role_topic_secret_groups_with_more_than_one_scenario": {
+      "Daniel|Sarah|Tony|infidelity|Infidelity": [
+        "confaide_t3_037",
+        "confaide_t3_052"
+      ]
+    },
+    "n_distinct_groups_loose": 269,
+    "loose_grouping_reason": "scenarios sharing (about, questionee, questioner, topic, secret) are merged into one cluster"
+  },
+  "bootstrap_per_record_contrast": {
+    "Standard Steering": {
+      "available": true,
+      "unit": "record (unclustered contrast)",
+      "n_valid_pairs": 270,
+      "n_clusters": 270,
+      "cluster_sizes": {
+        "1": 270
+      },
+      "resampling": "one pair per cluster (grouping map not supplied)",
+      "paired_delta_observed": 0.007407407407407408,
+      "bootstrap_ci95": [
+        -0.018518518518518517,
+        0.037037037037037035
+      ],
+      "n_boot": 2000,
+      "seed": 42,
+      "note": "Cluster bootstrap over distinct CONFAIDE Tier-3 STORIES (see independence_check for whether stories really are unique); assumes fixed judge labels, not human truth."
+    },
+    "CI-Parametric (all)": {
+      "available": true,
+      "unit": "record (unclustered contrast)",
+      "n_valid_pairs": 267,
+      "n_clusters": 267,
+      "cluster_sizes": {
+        "1": 267
+      },
+      "resampling": "one pair per cluster (grouping map not supplied)",
+      "paired_delta_observed": 0.0749063670411985,
+      "bootstrap_ci95": [
+        0.02247191011235955,
+        0.12734082397003746
+      ],
+      "n_boot": 2000,
+      "seed": 42,
+      "note": "Cluster bootstrap over distinct CONFAIDE Tier-3 STORIES (see independence_check for whether stories really are unique); assumes fixed judge labels, not human truth."
+    }
+  },
+  "bootstrap_loose_groups_sensitivity": {
+    "Standard Steering": {
+      "available": true,
+      "unit": "story + role/topic/secret merge",
+      "n_valid_pairs": 270,
+      "n_clusters": 269,
+      "cluster_sizes": {
+        "1": 268,
+        "2": 1
+      },
+      "resampling": "clusters drawn with replacement; all pairs inside a drawn cluster are included",
+      "paired_delta_observed": 0.007407407407407408,
+      "bootstrap_ci95": [
+        -0.01858736059479554,
+        0.03345724907063197
+      ],
+      "n_boot": 2000,
+      "seed": 42,
+      "note": "Cluster bootstrap over distinct CONFAIDE Tier-3 STORIES (see independence_check for whether stories really are unique); assumes fixed judge labels, not human truth."
+    },
+    "CI-Parametric (all)": {
+      "available": true,
+      "unit": "story + role/topic/secret merge",
+      "n_valid_pairs": 267,
+      "n_clusters": 266,
+      "cluster_sizes": {
+        "1": 265,
+        "2": 1
+      },
+      "resampling": "clusters drawn with replacement; all pairs inside a drawn cluster are included",
+      "paired_delta_observed": 0.0749063670411985,
+      "bootstrap_ci95": [
+        0.02247191011235955,
+        0.13432835820895522
+      ],
+      "n_boot": 2000,
+      "seed": 42,
+      "note": "Cluster bootstrap over distinct CONFAIDE Tier-3 STORIES (see independence_check for whether stories really are unique); assumes fixed judge labels, not human truth."
+    }
+  }
+}

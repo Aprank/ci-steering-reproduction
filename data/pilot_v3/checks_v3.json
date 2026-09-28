@@ -1,0 +1,105 @@
+{
+  "C1_authorization_clause_has_no_negation": {
+    "passed": true,
+    "offenders": []
+  },
+  "C2_policy_differs_only_in_authorizer_name": {
+    "passed": true,
+    "issues": []
+  },
+  "C3_strength_differs_only_in_task_clause": {
+    "passed": true,
+    "issues": []
+  },
+  "C4_authorizer_name_does_not_determine_label": {
+    "passed": true,
+    "n_authorizer_names": 40,
+    "n_names_with_both_labels": 40,
+    "names_with_one_label_only": {},
+    "note": "v2 hard-coded passed=True here and in fact had 0/40 names with both labels; v3 swaps the target inside each scenario so every name is an authorizer under label 0 and under label 1"
+  },
+  "C5_three_distinct_entities_and_isolation": {
+    "passed": true,
+    "non_distinct_trios": [],
+    "entities_spanning_scenarios": {}
+  },
+  "C6_template_family_covers_both_labels": {
+    "passed": true,
+    "families_with_one_label": []
+  },
+  "C7_identical_input_never_gets_opposite_labels": {
+    "passed": true,
+    "n_distinct_input_texts": 160,
+    "n_rows": 160,
+    "conflicts": []
+  },
+  "C8_label_basis_recorded_and_consistent": {
+    "passed": true,
+    "offenders": []
+  },
+  "C9_labels_invariant_under_renaming": {
+    "passed": true,
+    "moved": []
+  },
+  "C10_labels_invariant_under_owner_swap": {
+    "passed": true,
+    "moved": []
+  },
+  "C11_tfidf_control_grouped": {
+    "available": true,
+    "protocol": "TF-IDF(1-2gram)+LR, GroupKFold(5) by base scenario, 5 group shuffles",
+    "mean_auroc": 0.50703125,
+    "min_auroc": 0.4609375,
+    "max_auroc": 0.5546875,
+    "per_seed_mean_auroc": {
+      "0": 0.50859375,
+      "1": 0.50078125,
+      "2": 0.51640625,
+      "3": 0.5109375,
+      "4": 0.4984375
+    },
+    "v2_reference_auroc": 0.506,
+    "v1_reference_auroc": 0.825,
+    "interpretation": "near chance => the label is not recoverable from the word bag on held-out scenarios.  This does NOT prove that every surface shortcut is gone, and does NOT prove that a model must perform privacy-norm reasoning."
+  },
+  "C11b_name_only_control": {
+    "available": true,
+    "mean_auroc": 0.5,
+    "note": "one-hot authorizer name, held-out scenarios -> must be ~0.5"
+  },
+  "C12_design": {
+    "policy_mode": "explicit",
+    "base_scenarios": 20,
+    "inputs": 160,
+    "factors": [
+      "target_owner in {owner_1, owner_2}",
+      "authorization in {allow, disallow}",
+      "task_strength in {normal, integrity}"
+    ],
+    "cross": "2 x 2 x 2 = 8 inputs per base scenario; 20 x 8 = 160",
+    "independent_unit": "the BASE SCENARIO (group_id); both target variants of a scenario share one group, so a group split can never leak a name label across train/test",
+    "rows_vs_independent_units": "160 rows from 20 independent units",
+    "not_tested_in_this_batch": [
+      "authorization naming a DIFFERENT recipient than the request",
+      "role-based or legal access grounds",
+      "multi-hop authorization chains"
+    ],
+    "scope": "measures understanding/execution of an EXPLICITLY STATED authorization policy; not general privacy-norm awareness"
+  },
+  "counts": {
+    "scenarios": 20,
+    "inputs": 160,
+    "per_policy": {
+      "disallow": 80,
+      "allow": 80
+    },
+    "per_strength": {
+      "normal": 80,
+      "integrity": 80
+    },
+    "per_target": {
+      "owner_1": 80,
+      "owner_2": 80
+    }
+  }
+}

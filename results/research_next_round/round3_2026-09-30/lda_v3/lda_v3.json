@@ -1,0 +1,4165 @@
+{
+  "run_id": "round3_2026-09-30",
+  "layer": 21,
+  "seed": 42,
+  "layer_selection_caveat": "the 75th-percentile layer is a hyper-parameter chosen on the SAME data; the layer_robustness block below repeats the matrix at other layers",
+  "scenario_sharing": {
+    "info_type vs recipient": {
+      "n_a": 500,
+      "n_b": 500,
+      "shared_subject_sender_signatures": 69,
+      "shared_fraction_of_smaller": 0.138,
+      "identical_activation_rows": 16
+    },
+    "info_type vs transmission_principle": {
+      "n_a": 500,
+      "n_b": 500,
+      "shared_subject_sender_signatures": 69,
+      "shared_fraction_of_smaller": 0.138,
+      "identical_activation_rows": 4
+    },
+    "recipient vs transmission_principle": {
+      "n_a": 500,
+      "n_b": 500,
+      "shared_subject_sender_signatures": 69,
+      "shared_fraction_of_smaller": 0.138,
+      "identical_activation_rows": 16
+    }
+  },
+  "grouping": {
+    "loose": {
+      "definition": "(subject, sender)",
+      "n_groups_per_param": {
+        "info_type": 69,
+        "recipient": 69,
+        "transmission_principle": 69
+      },
+      "n_groups_joint_union": 69,
+      "n_groups_in_all_three_params": 69,
+      "sample_counts": {
+        "info_type": 500,
+        "recipient": 500,
+        "transmission_principle": 500
+      },
+      "fold_protocol": "StratifiedGroupKFold(n_splits=5, shuffle=True, seed=42) on loose groups — IDENTICAL for every protocol; stratified so no class can vanish from a train fold"
+    },
+    "strict": {
+      "definition": "(subject, sender, fact)",
+      "n_groups_per_param": {
+        "info_type": 345,
+        "recipient": 94,
+        "transmission_principle": 94
+      },
+      "n_groups_joint_union": 345,
+      "n_groups_in_all_three_params": 94,
+      "sample_counts": {
+        "info_type": 500,
+        "recipient": 500,
+        "transmission_principle": 500
+      },
+      "fold_protocol": "StratifiedGroupKFold(n_splits=5, shuffle=True, seed=42) on strict groups — IDENTICAL for every protocol; stratified so no class can vanish from a train fold"
+    }
+  },
+  "matrices": {
+    "loose_ungrouped": {
+      "matrix": [
+        [
+          1.0,
+          0.198,
+          0.202
+        ],
+        [
+          0.20800000000000002,
+          1.0,
+          0.21400000000000002
+        ],
+        [
+          0.21200000000000002,
+          0.2,
+          1.0
+        ]
+      ],
+      "params": [
+        "info_type",
+        "recipient",
+        "transmission_principle"
+      ],
+      "cell_accuracy": {
+        "info_type->S_info_type": 1.0,
+        "info_type->S_recipient": 0.198,
+        "info_type->S_transmission_principle": 0.202,
+        "recipient->S_info_type": 0.20800000000000002,
+        "recipient->S_recipient": 1.0,
+        "recipient->S_transmission_principle": 0.21400000000000002,
+        "transmission_principle->S_info_type": 0.21200000000000002,
+        "transmission_principle->S_recipient": 0.2,
+        "transmission_principle->S_transmission_principle": 1.0
+      },
+      "diagonal": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "offdiagonal_mean": 0.20566666666666666,
+      "offdiagonal_max": 0.21400000000000002,
+      "n_cells_available": 9,
+      "all_assertions_hold": false,
+      "degenerate_cells": {},
+      "cells": {
+        "info_type->S_info_type": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "info_type->S_recipient": {
+          "available": true,
+          "accuracy": 0.198,
+          "accuracy_std": 0.014696938456699069,
+          "fold_accuracies": [
+            0.21,
+            0.19,
+            0.18,
+            0.19,
+            0.22
+          ],
+          "confusion_matrix": [
+            [
+              24,
+              10,
+              18,
+              21,
+              27
+            ],
+            [
+              24,
+              10,
+              18,
+              20,
+              28
+            ],
+            [
+              27,
+              9,
+              15,
+              23,
+              26
+            ],
+            [
+              28,
+              9,
+              16,
+              23,
+              24
+            ],
+            [
+              29,
+              12,
+              12,
+              20,
+              27
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "info_type->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.202,
+          "accuracy_std": 0.003999999999999992,
+          "fold_accuracies": [
+            0.21,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+          ],
+          "confusion_matrix": [
+            [
+              33,
+              0,
+              18,
+              18,
+              31
+            ],
+            [
+              34,
+              0,
+              18,
+              19,
+              29
+            ],
+            [
+              32,
+              0,
+              18,
+              18,
+              32
+            ],
+            [
+              33,
+              0,
+              18,
+              18,
+              31
+            ],
+            [
+              32,
+              0,
+              18,
+              18,
+              32
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "recipient->S_info_type": {
+          "available": true,
+          "accuracy": 0.20800000000000002,
+          "accuracy_std": 0.01599999999999999,
+          "fold_accuracies": [
+            0.2,
+            0.2,
+            0.2,
+            0.24,
+            0.2
+          ],
+          "confusion_matrix": [
+            [
+              25,
+              21,
+              22,
+              20,
+              12
+            ],
+            [
+              22,
+              23,
+              23,
+              21,
+              11
+            ],
+            [
+              23,
+              21,
+              23,
+              18,
+              15
+            ],
+            [
+              22,
+              21,
+              23,
+              20,
+              14
+            ],
+            [
+              21,
+              21,
+              23,
+              22,
+              13
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "recipient->S_recipient": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "recipient->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.21400000000000002,
+          "accuracy_std": 0.00489897948556636,
+          "fold_accuracies": [
+            0.21,
+            0.22,
+            0.21,
+            0.21,
+            0.22
+          ],
+          "confusion_matrix": [
+            [
+              21,
+              49,
+              11,
+              17,
+              2
+            ],
+            [
+              20,
+              50,
+              11,
+              17,
+              2
+            ],
+            [
+              20,
+              49,
+              11,
+              18,
+              2
+            ],
+            [
+              18,
+              46,
+              11,
+              23,
+              2
+            ],
+            [
+              19,
+              51,
+              11,
+              17,
+              2
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "transmission_principle->S_info_type": {
+          "available": true,
+          "accuracy": 0.21200000000000002,
+          "accuracy_std": 0.011661903789690599,
+          "fold_accuracies": [
+            0.22,
+            0.23,
+            0.2,
+            0.21,
+            0.2
+          ],
+          "confusion_matrix": [
+            [
+              18,
+              37,
+              9,
+              17,
+              19
+            ],
+            [
+              18,
+              34,
+              7,
+              22,
+              19
+            ],
+            [
+              17,
+              35,
+              8,
+              21,
+              19
+            ],
+            [
+              16,
+              33,
+              7,
+              24,
+              20
+            ],
+            [
+              17,
+              33,
+              7,
+              21,
+              22
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "transmission_principle->S_recipient": {
+          "available": true,
+          "accuracy": 0.2,
+          "accuracy_std": 0.016733200530681516,
+          "fold_accuracies": [
+            0.19,
+            0.2,
+            0.2,
+            0.18,
+            0.23
+          ],
+          "confusion_matrix": [
+            [
+              10,
+              27,
+              26,
+              14,
+              23
+            ],
+            [
+              8,
+              27,
+              26,
+              13,
+              26
+            ],
+            [
+              13,
+              27,
+              26,
+              12,
+              22
+            ],
+            [
+              13,
+              27,
+              30,
+              9,
+              21
+            ],
+            [
+              11,
+              27,
+              25,
+              9,
+              28
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "transmission_principle->S_transmission_principle": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        }
+      }
+    },
+    "loose_group_excl": {
+      "matrix": [
+        [
+          0.9960000000000001,
+          0.21400000000000002,
+          0.20800000000000002
+        ],
+        [
+          0.22599999999999998,
+          0.9880000000000001,
+          0.21200000000000002
+        ],
+        [
+          0.23200000000000004,
+          0.23800000000000004,
+          1.0
+        ]
+      ],
+      "params": [
+        "info_type",
+        "recipient",
+        "transmission_principle"
+      ],
+      "cell_accuracy": {
+        "info_type->S_info_type": 0.9960000000000001,
+        "info_type->S_recipient": 0.21400000000000002,
+        "info_type->S_transmission_principle": 0.20800000000000002,
+        "recipient->S_info_type": 0.22599999999999998,
+        "recipient->S_recipient": 0.9880000000000001,
+        "recipient->S_transmission_principle": 0.21200000000000002,
+        "transmission_principle->S_info_type": 0.23200000000000004,
+        "transmission_principle->S_recipient": 0.23800000000000004,
+        "transmission_principle->S_transmission_principle": 1.0
+      },
+      "diagonal": [
+        0.9960000000000001,
+        0.9880000000000001,
+        1.0
+      ],
+      "offdiagonal_mean": 0.22166666666666668,
+      "offdiagonal_max": 0.23800000000000004,
+      "n_cells_available": 9,
+      "all_assertions_hold": true,
+      "degenerate_cells": {},
+      "cells": {
+        "info_type->S_info_type": {
+          "available": true,
+          "accuracy": 0.9960000000000001,
+          "accuracy_std": 0.00489897948556636,
+          "fold_accuracies": [
+            0.99,
+            1.0,
+            1.0,
+            1.0,
+            0.99
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              99,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              99
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "info_type->S_recipient": {
+          "available": true,
+          "accuracy": 0.21400000000000002,
+          "accuracy_std": 0.022449944320643647,
+          "fold_accuracies": [
+            0.2,
+            0.23,
+            0.25,
+            0.2,
+            0.19
+          ],
+          "confusion_matrix": [
+            [
+              29,
+              16,
+              25,
+              10,
+              20
+            ],
+            [
+              28,
+              17,
+              23,
+              12,
+              20
+            ],
+            [
+              26,
+              14,
+              26,
+              15,
+              19
+            ],
+            [
+              22,
+              16,
+              27,
+              15,
+              20
+            ],
+            [
+              23,
+              16,
+              26,
+              15,
+              20
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "info_type->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.20800000000000002,
+          "accuracy_std": 0.009797958971132708,
+          "fold_accuracies": [
+            0.2,
+            0.22,
+            0.22,
+            0.2,
+            0.2
+          ],
+          "confusion_matrix": [
+            [
+              43,
+              7,
+              11,
+              17,
+              22
+            ],
+            [
+              42,
+              9,
+              12,
+              15,
+              22
+            ],
+            [
+              43,
+              9,
+              12,
+              15,
+              21
+            ],
+            [
+              41,
+              9,
+              10,
+              18,
+              22
+            ],
+            [
+              45,
+              6,
+              11,
+              16,
+              22
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_info_type": {
+          "available": true,
+          "accuracy": 0.22599999999999998,
+          "accuracy_std": 0.018547236990991412,
+          "fold_accuracies": [
+            0.26,
+            0.21,
+            0.23,
+            0.22,
+            0.21
+          ],
+          "confusion_matrix": [
+            [
+              28,
+              30,
+              26,
+              11,
+              5
+            ],
+            [
+              24,
+              33,
+              22,
+              16,
+              5
+            ],
+            [
+              26,
+              28,
+              29,
+              11,
+              6
+            ],
+            [
+              27,
+              29,
+              22,
+              17,
+              5
+            ],
+            [
+              24,
+              32,
+              24,
+              14,
+              6
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_recipient": {
+          "available": true,
+          "accuracy": 0.9880000000000001,
+          "accuracy_std": 0.0040000000000000036,
+          "fold_accuracies": [
+            0.99,
+            0.99,
+            0.98,
+            0.99,
+            0.99
+          ],
+          "confusion_matrix": [
+            [
+              98,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              99,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              98,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              99
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.21200000000000002,
+          "accuracy_std": 0.014696938456699069,
+          "fold_accuracies": [
+            0.22,
+            0.22,
+            0.2,
+            0.19,
+            0.23
+          ],
+          "confusion_matrix": [
+            [
+              26,
+              37,
+              10,
+              21,
+              6
+            ],
+            [
+              21,
+              42,
+              6,
+              21,
+              10
+            ],
+            [
+              26,
+              38,
+              6,
+              21,
+              9
+            ],
+            [
+              23,
+              38,
+              7,
+              23,
+              9
+            ],
+            [
+              23,
+              38,
+              9,
+              21,
+              9
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_info_type": {
+          "available": true,
+          "accuracy": 0.23200000000000004,
+          "accuracy_std": 0.029257477676655597,
+          "fold_accuracies": [
+            0.2,
+            0.21,
+            0.22,
+            0.25,
+            0.28
+          ],
+          "confusion_matrix": [
+            [
+              27,
+              27,
+              8,
+              12,
+              26
+            ],
+            [
+              23,
+              34,
+              8,
+              11,
+              24
+            ],
+            [
+              27,
+              27,
+              8,
+              12,
+              26
+            ],
+            [
+              20,
+              29,
+              10,
+              21,
+              20
+            ],
+            [
+              23,
+              29,
+              5,
+              17,
+              26
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_recipient": {
+          "available": true,
+          "accuracy": 0.23800000000000004,
+          "accuracy_std": 0.0406939798987516,
+          "fold_accuracies": [
+            0.23,
+            0.2,
+            0.25,
+            0.2,
+            0.31
+          ],
+          "confusion_matrix": [
+            [
+              20,
+              31,
+              26,
+              9,
+              14
+            ],
+            [
+              15,
+              38,
+              24,
+              10,
+              13
+            ],
+            [
+              16,
+              30,
+              26,
+              11,
+              17
+            ],
+            [
+              18,
+              26,
+              29,
+              11,
+              16
+            ],
+            [
+              18,
+              33,
+              20,
+              5,
+              24
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_transmission_principle": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        }
+      }
+    },
+    "loose_nested": {
+      "matrix": [
+        [
+          0.9960000000000001,
+          0.21400000000000002,
+          0.20800000000000002
+        ],
+        [
+          0.22599999999999998,
+          0.9880000000000001,
+          0.21200000000000002
+        ],
+        [
+          0.23200000000000004,
+          0.23800000000000004,
+          1.0
+        ]
+      ],
+      "params": [
+        "info_type",
+        "recipient",
+        "transmission_principle"
+      ],
+      "cell_accuracy": {
+        "info_type->S_info_type": 0.9960000000000001,
+        "info_type->S_recipient": 0.21400000000000002,
+        "info_type->S_transmission_principle": 0.20800000000000002,
+        "recipient->S_info_type": 0.22599999999999998,
+        "recipient->S_recipient": 0.9880000000000001,
+        "recipient->S_transmission_principle": 0.21200000000000002,
+        "transmission_principle->S_info_type": 0.23200000000000004,
+        "transmission_principle->S_recipient": 0.23800000000000004,
+        "transmission_principle->S_transmission_principle": 1.0
+      },
+      "diagonal": [
+        0.9960000000000001,
+        0.9880000000000001,
+        1.0
+      ],
+      "offdiagonal_mean": 0.22166666666666668,
+      "offdiagonal_max": 0.23800000000000004,
+      "n_cells_available": 9,
+      "all_assertions_hold": true,
+      "degenerate_cells": {},
+      "cells": {
+        "info_type->S_info_type": {
+          "available": true,
+          "accuracy": 0.9960000000000001,
+          "accuracy_std": 0.00489897948556636,
+          "fold_accuracies": [
+            0.99,
+            1.0,
+            1.0,
+            1.0,
+            0.99
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              99,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              99
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "info_type->S_recipient": {
+          "available": true,
+          "accuracy": 0.21400000000000002,
+          "accuracy_std": 0.022449944320643647,
+          "fold_accuracies": [
+            0.2,
+            0.23,
+            0.25,
+            0.2,
+            0.19
+          ],
+          "confusion_matrix": [
+            [
+              29,
+              16,
+              25,
+              10,
+              20
+            ],
+            [
+              28,
+              17,
+              23,
+              12,
+              20
+            ],
+            [
+              26,
+              14,
+              26,
+              15,
+              19
+            ],
+            [
+              22,
+              16,
+              27,
+              15,
+              20
+            ],
+            [
+              23,
+              16,
+              26,
+              15,
+              20
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "info_type->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.20800000000000002,
+          "accuracy_std": 0.009797958971132708,
+          "fold_accuracies": [
+            0.2,
+            0.22,
+            0.22,
+            0.2,
+            0.2
+          ],
+          "confusion_matrix": [
+            [
+              43,
+              7,
+              11,
+              17,
+              22
+            ],
+            [
+              42,
+              9,
+              12,
+              15,
+              22
+            ],
+            [
+              43,
+              9,
+              12,
+              15,
+              21
+            ],
+            [
+              41,
+              9,
+              10,
+              18,
+              22
+            ],
+            [
+              45,
+              6,
+              11,
+              16,
+              22
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_info_type": {
+          "available": true,
+          "accuracy": 0.22599999999999998,
+          "accuracy_std": 0.018547236990991412,
+          "fold_accuracies": [
+            0.26,
+            0.21,
+            0.23,
+            0.22,
+            0.21
+          ],
+          "confusion_matrix": [
+            [
+              28,
+              30,
+              26,
+              11,
+              5
+            ],
+            [
+              24,
+              33,
+              22,
+              16,
+              5
+            ],
+            [
+              26,
+              28,
+              29,
+              11,
+              6
+            ],
+            [
+              27,
+              29,
+              22,
+              17,
+              5
+            ],
+            [
+              24,
+              32,
+              24,
+              14,
+              6
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_recipient": {
+          "available": true,
+          "accuracy": 0.9880000000000001,
+          "accuracy_std": 0.0040000000000000036,
+          "fold_accuracies": [
+            0.99,
+            0.99,
+            0.98,
+            0.99,
+            0.99
+          ],
+          "confusion_matrix": [
+            [
+              98,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              99,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              98,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              99
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.21200000000000002,
+          "accuracy_std": 0.014696938456699069,
+          "fold_accuracies": [
+            0.22,
+            0.22,
+            0.2,
+            0.19,
+            0.23
+          ],
+          "confusion_matrix": [
+            [
+              26,
+              37,
+              10,
+              21,
+              6
+            ],
+            [
+              21,
+              42,
+              6,
+              21,
+              10
+            ],
+            [
+              26,
+              38,
+              6,
+              21,
+              9
+            ],
+            [
+              23,
+              38,
+              7,
+              23,
+              9
+            ],
+            [
+              23,
+              38,
+              9,
+              21,
+              9
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_info_type": {
+          "available": true,
+          "accuracy": 0.23200000000000004,
+          "accuracy_std": 0.029257477676655597,
+          "fold_accuracies": [
+            0.2,
+            0.21,
+            0.22,
+            0.25,
+            0.28
+          ],
+          "confusion_matrix": [
+            [
+              27,
+              27,
+              8,
+              12,
+              26
+            ],
+            [
+              23,
+              34,
+              8,
+              11,
+              24
+            ],
+            [
+              27,
+              27,
+              8,
+              12,
+              26
+            ],
+            [
+              20,
+              29,
+              10,
+              21,
+              20
+            ],
+            [
+              23,
+              29,
+              5,
+              17,
+              26
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_recipient": {
+          "available": true,
+          "accuracy": 0.23800000000000004,
+          "accuracy_std": 0.0406939798987516,
+          "fold_accuracies": [
+            0.23,
+            0.2,
+            0.25,
+            0.2,
+            0.31
+          ],
+          "confusion_matrix": [
+            [
+              20,
+              31,
+              26,
+              9,
+              14
+            ],
+            [
+              15,
+              38,
+              24,
+              10,
+              13
+            ],
+            [
+              16,
+              30,
+              26,
+              11,
+              17
+            ],
+            [
+              18,
+              26,
+              29,
+              11,
+              16
+            ],
+            [
+              18,
+              33,
+              20,
+              5,
+              24
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_transmission_principle": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        }
+      }
+    },
+    "strict_ungrouped": {
+      "matrix": [
+        [
+          1.0,
+          0.14400000000000002,
+          0.11000000000000001
+        ],
+        [
+          0.20800000000000002,
+          1.0,
+          0.21800000000000003
+        ],
+        [
+          0.21800000000000003,
+          0.21999999999999997,
+          1.0
+        ]
+      ],
+      "params": [
+        "info_type",
+        "recipient",
+        "transmission_principle"
+      ],
+      "cell_accuracy": {
+        "info_type->S_info_type": 1.0,
+        "info_type->S_recipient": 0.14400000000000002,
+        "info_type->S_transmission_principle": 0.11000000000000001,
+        "recipient->S_info_type": 0.20800000000000002,
+        "recipient->S_recipient": 1.0,
+        "recipient->S_transmission_principle": 0.21800000000000003,
+        "transmission_principle->S_info_type": 0.21800000000000003,
+        "transmission_principle->S_recipient": 0.21999999999999997,
+        "transmission_principle->S_transmission_principle": 1.0
+      },
+      "diagonal": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "offdiagonal_mean": 0.18633333333333335,
+      "offdiagonal_max": 0.21999999999999997,
+      "n_cells_available": 9,
+      "all_assertions_hold": false,
+      "degenerate_cells": {},
+      "cells": {
+        "info_type->S_info_type": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "info_type->S_recipient": {
+          "available": true,
+          "accuracy": 0.14400000000000002,
+          "accuracy_std": 0.023323807579381208,
+          "fold_accuracies": [
+            0.17,
+            0.13,
+            0.17,
+            0.14,
+            0.11
+          ],
+          "confusion_matrix": [
+            [
+              21,
+              16,
+              24,
+              19,
+              20
+            ],
+            [
+              30,
+              11,
+              17,
+              23,
+              19
+            ],
+            [
+              30,
+              13,
+              12,
+              22,
+              23
+            ],
+            [
+              26,
+              18,
+              24,
+              14,
+              18
+            ],
+            [
+              28,
+              14,
+              26,
+              18,
+              14
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "info_type->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.11000000000000001,
+          "accuracy_std": 0.01788854381999832,
+          "fold_accuracies": [
+            0.1,
+            0.09,
+            0.1,
+            0.14,
+            0.12
+          ],
+          "confusion_matrix": [
+            [
+              18,
+              28,
+              9,
+              19,
+              26
+            ],
+            [
+              32,
+              10,
+              16,
+              14,
+              28
+            ],
+            [
+              33,
+              21,
+              5,
+              17,
+              24
+            ],
+            [
+              33,
+              21,
+              12,
+              8,
+              26
+            ],
+            [
+              32,
+              24,
+              12,
+              18,
+              14
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "recipient->S_info_type": {
+          "available": true,
+          "accuracy": 0.20800000000000002,
+          "accuracy_std": 0.0116619037896906,
+          "fold_accuracies": [
+            0.2,
+            0.21,
+            0.2,
+            0.23,
+            0.2
+          ],
+          "confusion_matrix": [
+            [
+              23,
+              21,
+              23,
+              22,
+              11
+            ],
+            [
+              21,
+              22,
+              23,
+              24,
+              10
+            ],
+            [
+              19,
+              21,
+              23,
+              25,
+              12
+            ],
+            [
+              20,
+              21,
+              23,
+              25,
+              11
+            ],
+            [
+              19,
+              21,
+              23,
+              26,
+              11
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "recipient->S_recipient": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "recipient->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.21800000000000003,
+          "accuracy_std": 0.0116619037896906,
+          "fold_accuracies": [
+            0.21,
+            0.21,
+            0.21,
+            0.24,
+            0.22
+          ],
+          "confusion_matrix": [
+            [
+              21,
+              46,
+              11,
+              17,
+              5
+            ],
+            [
+              17,
+              51,
+              11,
+              17,
+              4
+            ],
+            [
+              19,
+              48,
+              11,
+              16,
+              6
+            ],
+            [
+              16,
+              48,
+              11,
+              20,
+              5
+            ],
+            [
+              22,
+              44,
+              11,
+              17,
+              6
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "transmission_principle->S_info_type": {
+          "available": true,
+          "accuracy": 0.21800000000000003,
+          "accuracy_std": 0.01939071942966531,
+          "fold_accuracies": [
+            0.23,
+            0.21,
+            0.2,
+            0.25,
+            0.2
+          ],
+          "confusion_matrix": [
+            [
+              21,
+              34,
+              5,
+              21,
+              19
+            ],
+            [
+              18,
+              37,
+              5,
+              20,
+              20
+            ],
+            [
+              18,
+              35,
+              5,
+              23,
+              19
+            ],
+            [
+              17,
+              32,
+              5,
+              27,
+              19
+            ],
+            [
+              17,
+              32,
+              5,
+              27,
+              19
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "transmission_principle->S_recipient": {
+          "available": true,
+          "accuracy": 0.21999999999999997,
+          "accuracy_std": 0.018973665961010272,
+          "fold_accuracies": [
+            0.24,
+            0.19,
+            0.24,
+            0.22,
+            0.21
+          ],
+          "confusion_matrix": [
+            [
+              9,
+              27,
+              30,
+              7,
+              27
+            ],
+            [
+              10,
+              28,
+              28,
+              10,
+              24
+            ],
+            [
+              10,
+              28,
+              28,
+              8,
+              26
+            ],
+            [
+              10,
+              27,
+              23,
+              15,
+              25
+            ],
+            [
+              11,
+              27,
+              23,
+              9,
+              30
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        },
+        "transmission_principle->S_transmission_principle": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            500,
+            500,
+            500,
+            500,
+            500
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 5,
+          "assertion_no_test_group_in_fit": false
+        }
+      }
+    },
+    "strict_group_excl": {
+      "matrix": [
+        [
+          1.0,
+          0.2,
+          0.118
+        ],
+        [
+          0.196,
+          0.986,
+          0.196
+        ],
+        [
+          0.21800000000000003,
+          0.22799999999999998,
+          1.0
+        ]
+      ],
+      "params": [
+        "info_type",
+        "recipient",
+        "transmission_principle"
+      ],
+      "cell_accuracy": {
+        "info_type->S_info_type": 1.0,
+        "info_type->S_recipient": 0.2,
+        "info_type->S_transmission_principle": 0.118,
+        "recipient->S_info_type": 0.196,
+        "recipient->S_recipient": 0.986,
+        "recipient->S_transmission_principle": 0.196,
+        "transmission_principle->S_info_type": 0.21800000000000003,
+        "transmission_principle->S_recipient": 0.22799999999999998,
+        "transmission_principle->S_transmission_principle": 1.0
+      },
+      "diagonal": [
+        1.0,
+        0.986,
+        1.0
+      ],
+      "offdiagonal_mean": 0.19266666666666665,
+      "offdiagonal_max": 0.22799999999999998,
+      "n_cells_available": 9,
+      "all_assertions_hold": true,
+      "degenerate_cells": {},
+      "cells": {
+        "info_type->S_info_type": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "info_type->S_recipient": {
+          "available": true,
+          "accuracy": 0.2,
+          "accuracy_std": 0.018973665961010272,
+          "fold_accuracies": [
+            0.2,
+            0.17,
+            0.19,
+            0.22,
+            0.22
+          ],
+          "confusion_matrix": [
+            [
+              21,
+              12,
+              18,
+              24,
+              25
+            ],
+            [
+              24,
+              17,
+              17,
+              20,
+              22
+            ],
+            [
+              24,
+              8,
+              24,
+              18,
+              26
+            ],
+            [
+              23,
+              12,
+              22,
+              17,
+              26
+            ],
+            [
+              26,
+              16,
+              17,
+              20,
+              21
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            425,
+            395,
+            405,
+            400,
+            375
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "info_type->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.118,
+          "accuracy_std": 0.02039607805437114,
+          "fold_accuracies": [
+            0.11,
+            0.09,
+            0.11,
+            0.15,
+            0.13
+          ],
+          "confusion_matrix": [
+            [
+              17,
+              31,
+              14,
+              17,
+              21
+            ],
+            [
+              28,
+              17,
+              18,
+              15,
+              22
+            ],
+            [
+              30,
+              29,
+              7,
+              17,
+              17
+            ],
+            [
+              35,
+              21,
+              15,
+              8,
+              21
+            ],
+            [
+              30,
+              27,
+              17,
+              16,
+              10
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            425,
+            395,
+            405,
+            400,
+            375
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_info_type": {
+          "available": true,
+          "accuracy": 0.196,
+          "accuracy_std": 0.019595917942265426,
+          "fold_accuracies": [
+            0.2,
+            0.2,
+            0.2,
+            0.22,
+            0.16
+          ],
+          "confusion_matrix": [
+            [
+              24,
+              23,
+              24,
+              20,
+              9
+            ],
+            [
+              22,
+              20,
+              27,
+              25,
+              6
+            ],
+            [
+              21,
+              24,
+              25,
+              21,
+              9
+            ],
+            [
+              20,
+              19,
+              30,
+              22,
+              9
+            ],
+            [
+              21,
+              21,
+              27,
+              24,
+              7
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            469,
+            465,
+            468,
+            467,
+            472
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_recipient": {
+          "available": true,
+          "accuracy": 0.986,
+          "accuracy_std": 0.023323807579381222,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            0.99,
+            1.0,
+            0.94
+          ],
+          "confusion_matrix": [
+            [
+              98,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              97,
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              98,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.196,
+          "accuracy_std": 0.01019803902718557,
+          "fold_accuracies": [
+            0.2,
+            0.19,
+            0.18,
+            0.2,
+            0.21
+          ],
+          "confusion_matrix": [
+            [
+              30,
+              26,
+              14,
+              26,
+              4
+            ],
+            [
+              30,
+              25,
+              13,
+              27,
+              5
+            ],
+            [
+              32,
+              25,
+              15,
+              25,
+              3
+            ],
+            [
+              32,
+              26,
+              14,
+              26,
+              2
+            ],
+            [
+              32,
+              28,
+              14,
+              24,
+              2
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_info_type": {
+          "available": true,
+          "accuracy": 0.21800000000000003,
+          "accuracy_std": 0.007483314773547889,
+          "fold_accuracies": [
+            0.22,
+            0.21,
+            0.22,
+            0.21,
+            0.23
+          ],
+          "confusion_matrix": [
+            [
+              21,
+              19,
+              11,
+              22,
+              27
+            ],
+            [
+              20,
+              20,
+              10,
+              20,
+              30
+            ],
+            [
+              17,
+              16,
+              11,
+              27,
+              29
+            ],
+            [
+              18,
+              16,
+              10,
+              28,
+              28
+            ],
+            [
+              19,
+              16,
+              10,
+              26,
+              29
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            469,
+            465,
+            468,
+            467,
+            472
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_recipient": {
+          "available": true,
+          "accuracy": 0.22799999999999998,
+          "accuracy_std": 0.030594117081556717,
+          "fold_accuracies": [
+            0.26,
+            0.26,
+            0.18,
+            0.21,
+            0.23
+          ],
+          "confusion_matrix": [
+            [
+              19,
+              25,
+              24,
+              21,
+              11
+            ],
+            [
+              16,
+              34,
+              21,
+              12,
+              17
+            ],
+            [
+              18,
+              31,
+              22,
+              13,
+              16
+            ],
+            [
+              14,
+              28,
+              22,
+              15,
+              21
+            ],
+            [
+              18,
+              25,
+              21,
+              12,
+              24
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_transmission_principle": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        }
+      }
+    },
+    "strict_nested": {
+      "matrix": [
+        [
+          1.0,
+          0.2,
+          0.118
+        ],
+        [
+          0.21200000000000002,
+          0.986,
+          0.196
+        ],
+        [
+          0.246,
+          0.22799999999999998,
+          1.0
+        ]
+      ],
+      "params": [
+        "info_type",
+        "recipient",
+        "transmission_principle"
+      ],
+      "cell_accuracy": {
+        "info_type->S_info_type": 1.0,
+        "info_type->S_recipient": 0.2,
+        "info_type->S_transmission_principle": 0.118,
+        "recipient->S_info_type": 0.21200000000000002,
+        "recipient->S_recipient": 0.986,
+        "recipient->S_transmission_principle": 0.196,
+        "transmission_principle->S_info_type": 0.246,
+        "transmission_principle->S_recipient": 0.22799999999999998,
+        "transmission_principle->S_transmission_principle": 1.0
+      },
+      "diagonal": [
+        1.0,
+        0.986,
+        1.0
+      ],
+      "offdiagonal_mean": 0.19999999999999998,
+      "offdiagonal_max": 0.246,
+      "n_cells_available": 9,
+      "all_assertions_hold": true,
+      "degenerate_cells": {},
+      "cells": {
+        "info_type->S_info_type": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "info_type->S_recipient": {
+          "available": true,
+          "accuracy": 0.2,
+          "accuracy_std": 0.018973665961010272,
+          "fold_accuracies": [
+            0.2,
+            0.17,
+            0.19,
+            0.22,
+            0.22
+          ],
+          "confusion_matrix": [
+            [
+              21,
+              12,
+              18,
+              24,
+              25
+            ],
+            [
+              24,
+              17,
+              17,
+              20,
+              22
+            ],
+            [
+              24,
+              8,
+              24,
+              18,
+              26
+            ],
+            [
+              23,
+              12,
+              22,
+              17,
+              26
+            ],
+            [
+              26,
+              16,
+              17,
+              20,
+              21
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            425,
+            395,
+            405,
+            400,
+            375
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "info_type->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.118,
+          "accuracy_std": 0.02039607805437114,
+          "fold_accuracies": [
+            0.11,
+            0.09,
+            0.11,
+            0.15,
+            0.13
+          ],
+          "confusion_matrix": [
+            [
+              17,
+              31,
+              14,
+              17,
+              21
+            ],
+            [
+              28,
+              17,
+              18,
+              15,
+              22
+            ],
+            [
+              30,
+              29,
+              7,
+              17,
+              17
+            ],
+            [
+              35,
+              21,
+              15,
+              8,
+              21
+            ],
+            [
+              30,
+              27,
+              17,
+              16,
+              10
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            425,
+            395,
+            405,
+            400,
+            375
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_info_type": {
+          "available": true,
+          "accuracy": 0.21200000000000002,
+          "accuracy_std": 0.020396078054371138,
+          "fold_accuracies": [
+            0.23,
+            0.19,
+            0.24,
+            0.21,
+            0.19
+          ],
+          "confusion_matrix": [
+            [
+              23,
+              23,
+              15,
+              21,
+              18
+            ],
+            [
+              20,
+              25,
+              17,
+              21,
+              17
+            ],
+            [
+              19,
+              25,
+              21,
+              21,
+              14
+            ],
+            [
+              25,
+              22,
+              16,
+              21,
+              16
+            ],
+            [
+              25,
+              21,
+              14,
+              24,
+              16
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            128,
+            124,
+            127,
+            126,
+            131
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_recipient": {
+          "available": true,
+          "accuracy": 0.986,
+          "accuracy_std": 0.023323807579381222,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            0.99,
+            1.0,
+            0.94
+          ],
+          "confusion_matrix": [
+            [
+              98,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              97,
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              98,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "recipient->S_transmission_principle": {
+          "available": true,
+          "accuracy": 0.196,
+          "accuracy_std": 0.01019803902718557,
+          "fold_accuracies": [
+            0.2,
+            0.19,
+            0.18,
+            0.2,
+            0.21
+          ],
+          "confusion_matrix": [
+            [
+              30,
+              26,
+              14,
+              26,
+              4
+            ],
+            [
+              30,
+              25,
+              13,
+              27,
+              5
+            ],
+            [
+              32,
+              25,
+              15,
+              25,
+              3
+            ],
+            [
+              32,
+              26,
+              14,
+              26,
+              2
+            ],
+            [
+              32,
+              28,
+              14,
+              24,
+              2
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_info_type": {
+          "available": true,
+          "accuracy": 0.246,
+          "accuracy_std": 0.058514955353311165,
+          "fold_accuracies": [
+            0.32,
+            0.16,
+            0.2,
+            0.26,
+            0.29
+          ],
+          "confusion_matrix": [
+            [
+              22,
+              29,
+              7,
+              22,
+              20
+            ],
+            [
+              17,
+              43,
+              7,
+              12,
+              21
+            ],
+            [
+              18,
+              32,
+              5,
+              21,
+              24
+            ],
+            [
+              17,
+              29,
+              6,
+              29,
+              19
+            ],
+            [
+              17,
+              26,
+              7,
+              26,
+              24
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            128,
+            124,
+            127,
+            126,
+            131
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_recipient": {
+          "available": true,
+          "accuracy": 0.22799999999999998,
+          "accuracy_std": 0.030594117081556717,
+          "fold_accuracies": [
+            0.26,
+            0.26,
+            0.18,
+            0.21,
+            0.23
+          ],
+          "confusion_matrix": [
+            [
+              19,
+              25,
+              24,
+              21,
+              11
+            ],
+            [
+              16,
+              34,
+              21,
+              12,
+              17
+            ],
+            [
+              18,
+              31,
+              22,
+              13,
+              16
+            ],
+            [
+              14,
+              28,
+              22,
+              15,
+              21
+            ],
+            [
+              18,
+              25,
+              21,
+              12,
+              24
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        },
+        "transmission_principle->S_transmission_principle": {
+          "available": true,
+          "accuracy": 1.0,
+          "accuracy_std": 0.0,
+          "fold_accuracies": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_matrix": [
+            [
+              100,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              100,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              100,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              100,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              100
+            ]
+          ],
+          "n_folds_used": 5,
+          "n_folds_total": 5,
+          "fit_set_sizes": [
+            400,
+            400,
+            400,
+            400,
+            400
+          ],
+          "fit_set_class_counts": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "degenerate_folds": [],
+          "group_leak_violations": 0,
+          "assertion_no_test_group_in_fit": true
+        }
+      }
+    }
+  },
+  "layer_robustness": {
+    "0": {
+      "matrix": [
+        [
+          1.0,
+          0.20600000000000002,
+          0.20400000000000001
+        ],
+        [
+          0.202,
+          1.0,
+          0.198
+        ],
+        [
+          0.20400000000000001,
+          0.21200000000000002,
+          1.0
+        ]
+      ],
+      "diagonal": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "offdiagonal_mean": 0.20433333333333334,
+      "offdiagonal_max": 0.21200000000000002
+    },
+    "7": {
+      "matrix": [
+        [
+          1.0,
+          0.21400000000000002,
+          0.202
+        ],
+        [
+          0.20600000000000002,
+          1.0,
+          0.202
+        ],
+        [
+          0.20600000000000002,
+          0.21200000000000002,
+          1.0
+        ]
+      ],
+      "diagonal": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "offdiagonal_mean": 0.207,
+      "offdiagonal_max": 0.21400000000000002
+    },
+    "14": {
+      "matrix": [
+        [
+          1.0,
+          0.202,
+          0.2
+        ],
+        [
+          0.202,
+          1.0,
+          0.202
+        ],
+        [
+          0.22000000000000003,
+          0.22000000000000003,
+          1.0
+        ]
+      ],
+      "diagonal": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "offdiagonal_mean": 0.20766666666666667,
+      "offdiagonal_max": 0.22000000000000003
+    },
+    "21": {
+      "matrix": [
+        [
+          0.9960000000000001,
+          0.21400000000000002,
+          0.20800000000000002
+        ],
+        [
+          0.22599999999999998,
+          0.9880000000000001,
+          0.21200000000000002
+        ],
+        [
+          0.23200000000000004,
+          0.23800000000000004,
+          1.0
+        ]
+      ],
+      "diagonal": [
+        0.9960000000000001,
+        0.9880000000000001,
+        1.0
+      ],
+      "offdiagonal_mean": 0.22166666666666668,
+      "offdiagonal_max": 0.23800000000000004
+    },
+    "27": {
+      "matrix": [
+        [
+          1.0,
+          0.21400000000000002,
+          0.198
+        ],
+        [
+          0.21000000000000002,
+          0.998,
+          0.198
+        ],
+        [
+          0.22400000000000003,
+          0.21800000000000003,
+          1.0
+        ]
+      ],
+      "diagonal": [
+        1.0,
+        0.998,
+        1.0
+      ],
+      "offdiagonal_mean": 0.21033333333333334,
+      "offdiagonal_max": 0.22400000000000003
+    }
+  },
+  "permuted_label_control": {
+    "seconds_total": 456.1,
+    "seconds_per_permutation": 7.6,
+    "protocol": "loose/group_excl, labels permuted within each parameter",
+    "n_permutations": 60,
+    "diagonal_mean": [
+      0.20100000000000004,
+      0.19660000000000005,
+      0.20073333333333332
+    ],
+    "offdiagonal_mean": 0.18733333333333332,
+    "chance_reference": 0.2
+  },
+  "selectivity_caveat": "supports DISCRIMINATIVE selectivity only; not functional or causal independence"
+}
