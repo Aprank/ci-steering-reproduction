@@ -1,0 +1,32 @@
+{
+  "model": "Mistral-7B-Instruct-v0.3",
+  "layer": 24,
+  "layer_note": "75th-percentile layer (paper Appendix G)",
+  "chance_level_5class": 0.2,
+  "selectivity_matrix": {
+    "info_type": {
+      "info_type": 1.0,
+      "recipient": 0.22000000000000003,
+      "transmission_principle": 0.20600000000000002
+    },
+    "recipient": {
+      "info_type": 0.20400000000000001,
+      "recipient": 1.0,
+      "transmission_principle": 0.20400000000000001
+    },
+    "transmission_principle": {
+      "info_type": 0.23000000000000004,
+      "recipient": 0.23199999999999998,
+      "transmission_principle": 1.0
+    }
+  },
+  "permutation_test": {
+    "real_mean_abs_cosine": 0.9974232515653115,
+    "null_mean": 0.9982015121760519,
+    "null_std": 0.001086475112010775,
+    "p_value": 0.194,
+    "effect_size_sigma": 0.7163169505726924,
+    "n_permutations": 1000,
+    "seed": 42
+  }
+}

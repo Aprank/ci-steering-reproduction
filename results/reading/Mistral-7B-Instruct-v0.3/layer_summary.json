@@ -1,0 +1,226 @@
+{
+  "0": {
+    "layer": 0,
+    "pca_accuracy": 0.68,
+    "pca_auroc": 0.6851,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "1": {
+    "layer": 1,
+    "pca_accuracy": 0.68,
+    "pca_auroc": 0.6955,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "2": {
+    "layer": 2,
+    "pca_accuracy": 0.7,
+    "pca_auroc": 0.7079,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "3": {
+    "layer": 3,
+    "pca_accuracy": 0.61,
+    "pca_auroc": 0.605,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "4": {
+    "layer": 4,
+    "pca_accuracy": 0.59,
+    "pca_auroc": 0.6055999999999999,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "5": {
+    "layer": 5,
+    "pca_accuracy": 0.48,
+    "pca_auroc": 0.5104000000000001,
+    "probe_accuracy": 0.995,
+    "probe_auroc": 1.0
+  },
+  "6": {
+    "layer": 6,
+    "pca_accuracy": 0.58,
+    "pca_auroc": 0.5953,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "7": {
+    "layer": 7,
+    "pca_accuracy": 0.55,
+    "pca_auroc": 0.6211,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "8": {
+    "layer": 8,
+    "pca_accuracy": 0.58,
+    "pca_auroc": 0.6201999999999999,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "9": {
+    "layer": 9,
+    "pca_accuracy": 0.55,
+    "pca_auroc": 0.5960000000000001,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "10": {
+    "layer": 10,
+    "pca_accuracy": 0.5,
+    "pca_auroc": 0.5373,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "11": {
+    "layer": 11,
+    "pca_accuracy": 0.5,
+    "pca_auroc": 0.5329,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "12": {
+    "layer": 12,
+    "pca_accuracy": 0.47,
+    "pca_auroc": 0.49219999999999997,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "13": {
+    "layer": 13,
+    "pca_accuracy": 0.82,
+    "pca_auroc": 0.9106,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "14": {
+    "layer": 14,
+    "pca_accuracy": 0.83,
+    "pca_auroc": 0.9189999999999999,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "15": {
+    "layer": 15,
+    "pca_accuracy": 0.82,
+    "pca_auroc": 0.9212,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "16": {
+    "layer": 16,
+    "pca_accuracy": 0.77,
+    "pca_auroc": 0.8547,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "17": {
+    "layer": 17,
+    "pca_accuracy": 0.79,
+    "pca_auroc": 0.8202,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "18": {
+    "layer": 18,
+    "pca_accuracy": 0.66,
+    "pca_auroc": 0.6913,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "19": {
+    "layer": 19,
+    "pca_accuracy": 0.77,
+    "pca_auroc": 0.803,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "20": {
+    "layer": 20,
+    "pca_accuracy": 0.82,
+    "pca_auroc": 0.8447,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "21": {
+    "layer": 21,
+    "pca_accuracy": 0.83,
+    "pca_auroc": 0.8767,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "22": {
+    "layer": 22,
+    "pca_accuracy": 0.82,
+    "pca_auroc": 0.8566999999999999,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "23": {
+    "layer": 23,
+    "pca_accuracy": 0.85,
+    "pca_auroc": 0.9034,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "24": {
+    "layer": 24,
+    "pca_accuracy": 0.83,
+    "pca_auroc": 0.9096,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "25": {
+    "layer": 25,
+    "pca_accuracy": 0.82,
+    "pca_auroc": 0.8753,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "26": {
+    "layer": 26,
+    "pca_accuracy": 0.82,
+    "pca_auroc": 0.8765,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "27": {
+    "layer": 27,
+    "pca_accuracy": 0.79,
+    "pca_auroc": 0.8278,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "28": {
+    "layer": 28,
+    "pca_accuracy": 0.75,
+    "pca_auroc": 0.8037000000000001,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "29": {
+    "layer": 29,
+    "pca_accuracy": 0.71,
+    "pca_auroc": 0.7477,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "30": {
+    "layer": 30,
+    "pca_accuracy": 0.59,
+    "pca_auroc": 0.6082000000000001,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "31": {
+    "layer": 31,
+    "pca_accuracy": 0.58,
+    "pca_auroc": 0.6154000000000001,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  }
+}

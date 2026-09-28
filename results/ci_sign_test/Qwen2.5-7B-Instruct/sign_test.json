@@ -1,0 +1,63 @@
+{
+  "baseline_keyword_leakage": 0.5,
+  "sign_combos": {
+    "{\"info_type\": \"+\", \"recipient\": \"+\", \"transmission_principle\": \"+\"}": {
+      "leakage": 0.46,
+      "delta_vs_baseline": -0.03999999999999998
+    },
+    "{\"info_type\": \"+\", \"recipient\": \"+\", \"transmission_principle\": \"-\"}": {
+      "leakage": 0.48,
+      "delta_vs_baseline": -0.020000000000000018
+    },
+    "{\"info_type\": \"+\", \"recipient\": \"-\", \"transmission_principle\": \"+\"}": {
+      "leakage": 0.48,
+      "delta_vs_baseline": -0.020000000000000018
+    },
+    "{\"info_type\": \"+\", \"recipient\": \"-\", \"transmission_principle\": \"-\"}": {
+      "leakage": 0.54,
+      "delta_vs_baseline": 0.040000000000000036
+    },
+    "{\"info_type\": \"-\", \"recipient\": \"+\", \"transmission_principle\": \"+\"}": {
+      "leakage": 0.49,
+      "delta_vs_baseline": -0.010000000000000009
+    },
+    "{\"info_type\": \"-\", \"recipient\": \"+\", \"transmission_principle\": \"-\"}": {
+      "leakage": 0.54,
+      "delta_vs_baseline": 0.040000000000000036
+    },
+    "{\"info_type\": \"-\", \"recipient\": \"-\", \"transmission_principle\": \"+\"}": {
+      "leakage": 0.53,
+      "delta_vs_baseline": 0.030000000000000027
+    },
+    "{\"info_type\": \"-\", \"recipient\": \"-\", \"transmission_principle\": \"-\"}": {
+      "leakage": 0.49,
+      "delta_vs_baseline": -0.010000000000000009
+    }
+  },
+  "single_axis": {
+    "info_type+": {
+      "leakage": 0.5,
+      "delta_vs_baseline": 0.0
+    },
+    "info_type-": {
+      "leakage": 0.55,
+      "delta_vs_baseline": 0.050000000000000044
+    },
+    "recipient+": {
+      "leakage": 0.49,
+      "delta_vs_baseline": -0.010000000000000009
+    },
+    "recipient-": {
+      "leakage": 0.55,
+      "delta_vs_baseline": 0.050000000000000044
+    },
+    "transmission_principle+": {
+      "leakage": 0.49,
+      "delta_vs_baseline": -0.010000000000000009
+    },
+    "transmission_principle-": {
+      "leakage": 0.55,
+      "delta_vs_baseline": 0.050000000000000044
+    }
+  }
+}

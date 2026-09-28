@@ -1,0 +1,72 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "dataset": "confaide",
+  "n": 270,
+  "alpha": 1.0,
+  "ci_layers": [
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "methods": {
+    "No Steering": {
+      "n": 270,
+      "cache_hits": 242,
+      "new_judgements": 28,
+      "n_valid": 267,
+      "n_unknown": 3,
+      "unknown_rate": 0.011111111111111112,
+      "n_leaked": 115,
+      "leakage_valid_only": 0.4307116104868914,
+      "leakage_lower_bound": 0.42592592592592593,
+      "leakage_upper_bound": 0.43703703703703706,
+      "legacy_leakage_unknown_as_not_leaked": 0.42592592592592593
+    },
+    "Standard Steering": {
+      "n": 270,
+      "cache_hits": 255,
+      "new_judgements": 15,
+      "n_valid": 268,
+      "n_unknown": 2,
+      "unknown_rate": 0.007407407407407408,
+      "n_leaked": 117,
+      "leakage_valid_only": 0.43656716417910446,
+      "leakage_lower_bound": 0.43333333333333335,
+      "leakage_upper_bound": 0.44074074074074077,
+      "legacy_leakage_unknown_as_not_leaked": 0.43333333333333335
+    },
+    "CI-Parametric (all)": {
+      "n": 270,
+      "cache_hits": 224,
+      "new_judgements": 46,
+      "n_valid": 256,
+      "n_unknown": 14,
+      "unknown_rate": 0.05185185185185185,
+      "n_leaked": 127,
+      "leakage_valid_only": 0.49609375,
+      "leakage_lower_bound": 0.4703703703703704,
+      "leakage_upper_bound": 0.5222222222222223,
+      "legacy_leakage_unknown_as_not_leaked": 0.4703703703703704
+    }
+  },
+  "paired_deltas_vs_No Steering": {
+    "Standard Steering": {
+      "pair_valid": 122,
+      "pairs_dropped_unknown": 5,
+      "both_leak": 108,
+      "only_reference_leaks": 6,
+      "only_this_leaks": 8,
+      "net_leak_reduction": -2
+    },
+    "CI-Parametric (all)": {
+      "pair_valid": 145,
+      "pairs_dropped_unknown": 16,
+      "both_leak": 95,
+      "only_reference_leaks": 18,
+      "only_this_leaks": 32,
+      "net_leak_reduction": -14
+    }
+  }
+}

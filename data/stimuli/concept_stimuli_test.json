@@ -1,0 +1,2002 @@
+[
+  {
+    "text": "Dakota shares their sobriety journey at an anonymous support group meeting.",
+    "info_type": "substance_use",
+    "sender": "subject / attendee",
+    "recipient": "support group",
+    "subject": "Dakota",
+    "transmission_principle": "anonymous group norms",
+    "is_appropriate": true,
+    "pair_id": 491
+  },
+  {
+    "text": "A colleague reports Logan's private political opinions to their employer to cause professional harm.",
+    "info_type": "political",
+    "sender": "subject / colleague",
+    "recipient": "employer",
+    "subject": "Logan",
+    "transmission_principle": "no consent / malicious intent",
+    "is_appropriate": false,
+    "pair_id": 317
+  },
+  {
+    "text": "A court clerk processes Dakota's sealed juvenile record in the court database with restricted access.",
+    "info_type": "legal",
+    "sender": "court clerk",
+    "recipient": "restricted court database",
+    "subject": "Dakota",
+    "transmission_principle": "official duty",
+    "is_appropriate": true,
+    "pair_id": 291
+  },
+  {
+    "text": "A credit agency provides Harper's credit score to a landlord after Harper authorized a background check.",
+    "info_type": "financial",
+    "sender": "credit agency",
+    "recipient": "authorized landlord",
+    "subject": "Harper",
+    "transmission_principle": "consent",
+    "is_appropriate": true,
+    "pair_id": 59
+  },
+  {
+    "text": "An employer uses GPS tracking to monitor Harper's location during weekends and personal time.",
+    "info_type": "location",
+    "sender": "parent / employer",
+    "recipient": "employer",
+    "subject": "Harper",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 101
+  },
+  {
+    "text": "Finley's immigration lawyer discusses case specifics with a friend who is also a lawyer but not on the case.",
+    "info_type": "legal",
+    "sender": "immigration lawyer",
+    "recipient": "uninvolved friend-lawyer",
+    "subject": "Finley",
+    "transmission_principle": "no authorization",
+    "is_appropriate": false,
+    "pair_id": 288
+  },
+  {
+    "text": "A teacher announces to the class that Harper cannot eat certain foods because of their religion.",
+    "info_type": "religious",
+    "sender": "school / teacher",
+    "recipient": "entire class",
+    "subject": "Harper",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 386
+  },
+  {
+    "text": "A doctor discusses Alex's diagnosis of chronic back pain with a consulting specialist to determine the best treatment plan.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "consulting specialist",
+    "subject": "Alex",
+    "transmission_principle": "need-to-know",
+    "is_appropriate": true,
+    "pair_id": 0
+  },
+  {
+    "text": "A court clerk processes Kendall's sealed juvenile record in the court database with restricted access.",
+    "info_type": "legal",
+    "sender": "court clerk",
+    "recipient": "restricted court database",
+    "subject": "Kendall",
+    "transmission_principle": "official duty",
+    "is_appropriate": true,
+    "pair_id": 263
+  },
+  {
+    "text": "A doctor discusses Reese's diagnosis of chronic back pain with a consulting specialist to determine the best treatment plan.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "consulting specialist",
+    "subject": "Reese",
+    "transmission_principle": "need-to-know",
+    "is_appropriate": true,
+    "pair_id": 16
+  },
+  {
+    "text": "A healthcare provider asks about Drew's sexual orientation in a private intake form for relevant medical care.",
+    "info_type": "sexual_orientation",
+    "sender": "healthcare provider",
+    "recipient": "medical record (confidential)",
+    "subject": "Drew",
+    "transmission_principle": "medical relevance",
+    "is_appropriate": true,
+    "pair_id": 425
+  },
+  {
+    "text": "A school accommodates Harper's religious dietary needs in the cafeteria without disclosing the reason to classmates.",
+    "info_type": "religious",
+    "sender": "school / teacher",
+    "recipient": "cafeteria staff",
+    "subject": "Harper",
+    "transmission_principle": "need-to-know",
+    "is_appropriate": true,
+    "pair_id": 386
+  },
+  {
+    "text": "A parent uses a family safety app to check Morgan's location after school to ensure they arrived home safely.",
+    "info_type": "location",
+    "sender": "parent / employer",
+    "recipient": "parent",
+    "subject": "Morgan",
+    "transmission_principle": "child safety",
+    "is_appropriate": true,
+    "pair_id": 147
+  },
+  {
+    "text": "Harper's spouse reveals their personal debt to extended family members during a holiday gathering.",
+    "info_type": "financial",
+    "sender": "spouse",
+    "recipient": "extended family members",
+    "subject": "Harper",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 75
+  },
+  {
+    "text": "An attendee at a support group tells their social circle that Dakota is in recovery, naming them specifically.",
+    "info_type": "substance_use",
+    "sender": "subject / attendee",
+    "recipient": "social circle",
+    "subject": "Dakota",
+    "transmission_principle": "violated anonymity",
+    "is_appropriate": false,
+    "pair_id": 491
+  },
+  {
+    "text": "A parent uses a family safety app to check Harper's location after school to ensure they arrived home safely.",
+    "info_type": "location",
+    "sender": "parent / employer",
+    "recipient": "parent",
+    "subject": "Harper",
+    "transmission_principle": "child safety",
+    "is_appropriate": true,
+    "pair_id": 101
+  },
+  {
+    "text": "Dakota discloses their history of alcohol dependency to their doctor for appropriate medical treatment.",
+    "info_type": "substance_use",
+    "sender": "subject / coworker",
+    "recipient": "doctor",
+    "subject": "Dakota",
+    "transmission_principle": "voluntary disclosure for care",
+    "is_appropriate": true,
+    "pair_id": 476
+  },
+  {
+    "text": "A campaign staffer leaks Casey's large donation to opposition media to embarrass them.",
+    "info_type": "political",
+    "sender": "campaign",
+    "recipient": "opposition media",
+    "subject": "Casey",
+    "transmission_principle": "no consent / malicious intent",
+    "is_appropriate": false,
+    "pair_id": 334
+  },
+  {
+    "text": "A teacher announces to the class that Finley cannot eat certain foods because of their religion.",
+    "info_type": "religious",
+    "sender": "school / teacher",
+    "recipient": "entire class",
+    "subject": "Finley",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 381
+  },
+  {
+    "text": "An HR manager discusses Harper's performance review with Harper's direct supervisor as part of the annual evaluation process.",
+    "info_type": "employment",
+    "sender": "HR manager",
+    "recipient": "direct supervisor",
+    "subject": "Harper",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 192
+  },
+  {
+    "text": "A coworker reveals Emerson's past struggle with alcohol at a team meeting after overhearing a private call.",
+    "info_type": "substance_use",
+    "sender": "subject / coworker",
+    "recipient": "team meeting attendees",
+    "subject": "Emerson",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 497
+  },
+  {
+    "text": "A lawyer discusses Jamie's criminal record with a judge in a sealed courtroom proceeding.",
+    "info_type": "legal",
+    "sender": "lawyer",
+    "recipient": "judge in sealed proceeding",
+    "subject": "Jamie",
+    "transmission_principle": "legal process",
+    "is_appropriate": true,
+    "pair_id": 256
+  },
+  {
+    "text": "A rehabilitation counselor updates Taylor's treatment team about their progress in a confidential case meeting.",
+    "info_type": "substance_use",
+    "sender": "rehabilitation counselor",
+    "recipient": "treatment team",
+    "subject": "Taylor",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 492
+  },
+  {
+    "text": "A coworker reveals Casey's past struggle with alcohol at a team meeting after overhearing a private call.",
+    "info_type": "substance_use",
+    "sender": "subject / coworker",
+    "recipient": "team meeting attendees",
+    "subject": "Casey",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 455
+  },
+  {
+    "text": "An HR manager gossips about Finley's poor performance review with employees from another department.",
+    "info_type": "employment",
+    "sender": "HR manager",
+    "recipient": "unrelated employees",
+    "subject": "Finley",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 150
+  },
+  {
+    "text": "A probation officer shares details of Logan's legal troubles with their own family at dinner.",
+    "info_type": "legal",
+    "sender": "probation officer",
+    "recipient": "officer's family",
+    "subject": "Logan",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 295
+  },
+  {
+    "text": "A priest keeps Kendall's confession completely confidential as required by the seal of confession.",
+    "info_type": "religious",
+    "sender": "priest",
+    "recipient": "no one (kept confidential)",
+    "subject": "Kendall",
+    "transmission_principle": "seal of confession",
+    "is_appropriate": true,
+    "pair_id": 355
+  },
+  {
+    "text": "A doctor discusses Avery's diagnosis of an eating disorder with a consulting specialist to determine the best treatment plan.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "consulting specialist",
+    "subject": "Avery",
+    "transmission_principle": "need-to-know",
+    "is_appropriate": true,
+    "pair_id": 46
+  },
+  {
+    "text": "An attendee at a support group tells their social circle that Finley is in recovery, naming them specifically.",
+    "info_type": "substance_use",
+    "sender": "subject / attendee",
+    "recipient": "social circle",
+    "subject": "Finley",
+    "transmission_principle": "violated anonymity",
+    "is_appropriate": false,
+    "pair_id": 474
+  },
+  {
+    "text": "A campaign records Harper's donation amount as required by campaign finance law.",
+    "info_type": "political",
+    "sender": "campaign",
+    "recipient": "public finance record",
+    "subject": "Harper",
+    "transmission_principle": "legal obligation",
+    "is_appropriate": true,
+    "pair_id": 348
+  },
+  {
+    "text": "A rehabilitation counselor mentions Cameron's drug treatment to a mutual acquaintance outside of work.",
+    "info_type": "substance_use",
+    "sender": "rehabilitation counselor",
+    "recipient": "mutual acquaintance",
+    "subject": "Cameron",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 493
+  },
+  {
+    "text": "A political operative obtains Cameron's voting record and uses it for targeted intimidation.",
+    "info_type": "political",
+    "sender": "voter registration / political operative",
+    "recipient": "political operative",
+    "subject": "Cameron",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 322
+  },
+  {
+    "text": "A friend outs Logan's sexual orientation to Logan's conservative family without permission.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (outed without consent)",
+    "subject": "Logan",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 442
+  },
+  {
+    "text": "A couples therapist writes a blog post about Emerson's marital problems using thinly disguised details.",
+    "info_type": "relationships",
+    "sender": "therapist",
+    "recipient": "blog readers",
+    "subject": "Emerson",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 239
+  },
+  {
+    "text": "A healthcare provider discusses Parker's sexual orientation with other staff in the break room.",
+    "info_type": "sexual_orientation",
+    "sender": "healthcare provider",
+    "recipient": "break room staff",
+    "subject": "Parker",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 416
+  },
+  {
+    "text": "A coworker reveals Jamie's past struggle with alcohol at a team meeting after overhearing a private call.",
+    "info_type": "substance_use",
+    "sender": "subject / coworker",
+    "recipient": "team meeting attendees",
+    "subject": "Jamie",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 465
+  },
+  {
+    "text": "A credit agency sells Harper's detailed financial history to a data broker without notification.",
+    "info_type": "financial",
+    "sender": "credit agency",
+    "recipient": "data broker",
+    "subject": "Harper",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 59
+  },
+  {
+    "text": "An HR manager gossips about Cameron's poor performance review with employees from another department.",
+    "info_type": "employment",
+    "sender": "HR manager",
+    "recipient": "unrelated employees",
+    "subject": "Cameron",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 162
+  },
+  {
+    "text": "A priest keeps Drew's confession completely confidential as required by the seal of confession.",
+    "info_type": "religious",
+    "sender": "priest",
+    "recipient": "no one (kept confidential)",
+    "subject": "Drew",
+    "transmission_principle": "seal of confession",
+    "is_appropriate": true,
+    "pair_id": 365
+  },
+  {
+    "text": "Sage shares their religious conversion story at a community gathering where they chose to speak.",
+    "info_type": "religious",
+    "sender": "subject / neighbor",
+    "recipient": "community gathering",
+    "subject": "Sage",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 351
+  },
+  {
+    "text": "A campaign staffer leaks Harper's large donation to opposition media to embarrass them.",
+    "info_type": "political",
+    "sender": "campaign",
+    "recipient": "opposition media",
+    "subject": "Harper",
+    "transmission_principle": "no consent / malicious intent",
+    "is_appropriate": false,
+    "pair_id": 348
+  },
+  {
+    "text": "An insurance company reviews Kendall's medical records to process a legitimate claim.",
+    "info_type": "health",
+    "sender": "insurance company",
+    "recipient": "claims processor",
+    "subject": "Kendall",
+    "transmission_principle": "contractual obligation",
+    "is_appropriate": true,
+    "pair_id": 41
+  },
+  {
+    "text": "A parent uses a family safety app to check Reese's location after school to ensure they arrived home safely.",
+    "info_type": "location",
+    "sender": "parent / employer",
+    "recipient": "parent",
+    "subject": "Reese",
+    "transmission_principle": "child safety",
+    "is_appropriate": true,
+    "pair_id": 114
+  },
+  {
+    "text": "A workplace mediator shares details of Dakota's harassment complaint at a staff meeting.",
+    "info_type": "employment",
+    "sender": "workplace mediator",
+    "recipient": "staff meeting attendees",
+    "subject": "Dakota",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 181
+  },
+  {
+    "text": "A political operative obtains Avery's voting record and uses it for targeted intimidation.",
+    "info_type": "political",
+    "sender": "voter registration / political operative",
+    "recipient": "political operative",
+    "subject": "Avery",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 320
+  },
+  {
+    "text": "Avery's parent discusses their child's allergy information with other parents at a school event for no particular reason.",
+    "info_type": "health",
+    "sender": "parent",
+    "recipient": "other parents",
+    "subject": "Avery",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 29
+  },
+  {
+    "text": "Logan's spouse reveals their personal debt to extended family members during a holiday gathering.",
+    "info_type": "financial",
+    "sender": "spouse",
+    "recipient": "extended family members",
+    "subject": "Logan",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 85
+  },
+  {
+    "text": "A doctor discusses Reese's diagnosis of an autoimmune condition with a consulting specialist to determine the best treatment plan.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "consulting specialist",
+    "subject": "Reese",
+    "transmission_principle": "need-to-know",
+    "is_appropriate": true,
+    "pair_id": 6
+  },
+  {
+    "text": "Emerson shares their religious conversion story at a community gathering where they chose to speak.",
+    "info_type": "religious",
+    "sender": "subject / neighbor",
+    "recipient": "community gathering",
+    "subject": "Emerson",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 380
+  },
+  {
+    "text": "Dakota comes out to their family on their own terms when they feel ready.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (self-disclosed)",
+    "subject": "Dakota",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 402
+  },
+  {
+    "text": "A couples therapist discusses Taylor and their partner's relationship dynamics in a confidential therapy session.",
+    "info_type": "relationships",
+    "sender": "therapist",
+    "recipient": "the couple",
+    "subject": "Taylor",
+    "transmission_principle": "professional confidentiality",
+    "is_appropriate": true,
+    "pair_id": 223
+  },
+  {
+    "text": "A workplace mediator reviews Dakota's complaint details in a confidential dispute resolution session.",
+    "info_type": "employment",
+    "sender": "workplace mediator",
+    "recipient": "dispute resolution panel",
+    "subject": "Dakota",
+    "transmission_principle": "confidentiality",
+    "is_appropriate": true,
+    "pair_id": 181
+  },
+  {
+    "text": "A company's payroll department processes Finley's salary information for tax withholding purposes.",
+    "info_type": "employment",
+    "sender": "payroll department",
+    "recipient": "tax system",
+    "subject": "Finley",
+    "transmission_principle": "legal obligation",
+    "is_appropriate": true,
+    "pair_id": 161
+  },
+  {
+    "text": "A nurse shares Casey's medication list with the pharmacy to fulfill a prescription.",
+    "info_type": "health",
+    "sender": "nurse",
+    "recipient": "pharmacy",
+    "subject": "Casey",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 49
+  },
+  {
+    "text": "A court clerk looks up Dakota's sealed juvenile record to satisfy personal curiosity.",
+    "info_type": "legal",
+    "sender": "court clerk",
+    "recipient": "the clerk personally",
+    "subject": "Dakota",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 291
+  },
+  {
+    "text": "An accountant brags about Finley's high income to friends at a party.",
+    "info_type": "financial",
+    "sender": "accountant",
+    "recipient": "friends at a party",
+    "subject": "Finley",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 87
+  },
+  {
+    "text": "Emerson discloses their history of alcohol dependency to their doctor for appropriate medical treatment.",
+    "info_type": "substance_use",
+    "sender": "subject / coworker",
+    "recipient": "doctor",
+    "subject": "Emerson",
+    "transmission_principle": "voluntary disclosure for care",
+    "is_appropriate": true,
+    "pair_id": 497
+  },
+  {
+    "text": "A delivery service shares Riley's home address with third-party advertisers for targeted mail.",
+    "info_type": "location",
+    "sender": "delivery service",
+    "recipient": "third-party advertisers",
+    "subject": "Riley",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 134
+  },
+  {
+    "text": "A friend outs Taylor's sexual orientation to Taylor's conservative family without permission.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (outed without consent)",
+    "subject": "Taylor",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 434
+  },
+  {
+    "text": "A doctor discusses Morgan's diagnosis of a recent cancer diagnosis at a dinner party with friends for casual conversation.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "dinner party friends",
+    "subject": "Morgan",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 38
+  },
+  {
+    "text": "A family member reveals that Avery is going through fertility treatments to relatives without Avery's permission.",
+    "info_type": "relationships",
+    "sender": "family member",
+    "recipient": "relatives without permission",
+    "subject": "Avery",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 211
+  },
+  {
+    "text": "A school accommodates Finley's religious dietary needs in the cafeteria without disclosing the reason to classmates.",
+    "info_type": "religious",
+    "sender": "school / teacher",
+    "recipient": "cafeteria staff",
+    "subject": "Finley",
+    "transmission_principle": "need-to-know",
+    "is_appropriate": true,
+    "pair_id": 381
+  },
+  {
+    "text": "A bank officer reviews Drew's account balance and credit history during a mortgage application.",
+    "info_type": "financial",
+    "sender": "bank officer",
+    "recipient": "loan committee",
+    "subject": "Drew",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 97
+  },
+  {
+    "text": "An employer uses GPS tracking to monitor Alex's location during weekends and personal time.",
+    "info_type": "location",
+    "sender": "parent / employer",
+    "recipient": "employer",
+    "subject": "Alex",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 122
+  },
+  {
+    "text": "Emerson shares their live location with a close friend while walking home late at night for safety.",
+    "info_type": "location",
+    "sender": "subject / stalker",
+    "recipient": "trusted friend",
+    "subject": "Emerson",
+    "transmission_principle": "consent",
+    "is_appropriate": true,
+    "pair_id": 148
+  },
+  {
+    "text": "A doctor discusses Reese's diagnosis of an autoimmune condition at a dinner party with friends for casual conversation.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "dinner party friends",
+    "subject": "Reese",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 6
+  },
+  {
+    "text": "A school accommodates Avery's religious dietary needs in the cafeteria without disclosing the reason to classmates.",
+    "info_type": "religious",
+    "sender": "school / teacher",
+    "recipient": "cafeteria staff",
+    "subject": "Avery",
+    "transmission_principle": "need-to-know",
+    "is_appropriate": true,
+    "pair_id": 357
+  },
+  {
+    "text": "A healthcare provider discusses Casey's sexual orientation with other staff in the break room.",
+    "info_type": "sexual_orientation",
+    "sender": "healthcare provider",
+    "recipient": "break room staff",
+    "subject": "Casey",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 406
+  },
+  {
+    "text": "A neighbor tells the whole street that Sage has converted to a different religion, causing social friction.",
+    "info_type": "religious",
+    "sender": "subject / neighbor",
+    "recipient": "the whole street",
+    "subject": "Sage",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 351
+  },
+  {
+    "text": "Logan voluntarily shares their political views in a structured town hall discussion.",
+    "info_type": "political",
+    "sender": "subject / colleague",
+    "recipient": "town hall participants",
+    "subject": "Logan",
+    "transmission_principle": "voluntary disclosure",
+    "is_appropriate": true,
+    "pair_id": 317
+  },
+  {
+    "text": "A campaign records Finley's donation amount as required by campaign finance law.",
+    "info_type": "political",
+    "sender": "campaign",
+    "recipient": "public finance record",
+    "subject": "Finley",
+    "transmission_principle": "legal obligation",
+    "is_appropriate": true,
+    "pair_id": 337
+  },
+  {
+    "text": "A healthcare provider asks about Drew's sexual orientation in a private intake form for relevant medical care.",
+    "info_type": "sexual_orientation",
+    "sender": "healthcare provider",
+    "recipient": "medical record (confidential)",
+    "subject": "Drew",
+    "transmission_principle": "medical relevance",
+    "is_appropriate": true,
+    "pair_id": 440
+  },
+  {
+    "text": "A teacher announces to the class that Casey cannot eat certain foods because of their religion.",
+    "info_type": "religious",
+    "sender": "school / teacher",
+    "recipient": "entire class",
+    "subject": "Casey",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 392
+  },
+  {
+    "text": "A friend outs Harper's sexual orientation to Harper's conservative family without permission.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (outed without consent)",
+    "subject": "Harper",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 413
+  },
+  {
+    "text": "A lawyer discusses Jamie's criminal record with a judge in a sealed courtroom proceeding.",
+    "info_type": "legal",
+    "sender": "lawyer",
+    "recipient": "judge in sealed proceeding",
+    "subject": "Jamie",
+    "transmission_principle": "legal process",
+    "is_appropriate": true,
+    "pair_id": 252
+  },
+  {
+    "text": "A family member reveals that Reese is going through fertility treatments to relatives without Reese's permission.",
+    "info_type": "relationships",
+    "sender": "family member",
+    "recipient": "relatives without permission",
+    "subject": "Reese",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 249
+  },
+  {
+    "text": "Taylor comes out to their family on their own terms when they feel ready.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (self-disclosed)",
+    "subject": "Taylor",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 434
+  },
+  {
+    "text": "A nurse shares Casey's medication list with a curious coworker during a lunch break.",
+    "info_type": "health",
+    "sender": "nurse",
+    "recipient": "curious coworker",
+    "subject": "Casey",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 49
+  },
+  {
+    "text": "A voter registration office stores Cameron's party affiliation as part of the official electoral record.",
+    "info_type": "political",
+    "sender": "voter registration / political operative",
+    "recipient": "electoral system",
+    "subject": "Cameron",
+    "transmission_principle": "legal requirement",
+    "is_appropriate": true,
+    "pair_id": 322
+  },
+  {
+    "text": "Taylor's coworker tells the entire office about Taylor's new romantic relationship before Taylor has shared it.",
+    "info_type": "relationships",
+    "sender": "subject / coworker",
+    "recipient": "entire office",
+    "subject": "Taylor",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 245
+  },
+  {
+    "text": "A voter registration office stores Alex's party affiliation as part of the official electoral record.",
+    "info_type": "political",
+    "sender": "voter registration / political operative",
+    "recipient": "electoral system",
+    "subject": "Alex",
+    "transmission_principle": "legal requirement",
+    "is_appropriate": true,
+    "pair_id": 311
+  },
+  {
+    "text": "A doctor discusses Reese's diagnosis of depression with a consulting specialist to determine the best treatment plan.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "consulting specialist",
+    "subject": "Reese",
+    "transmission_principle": "need-to-know",
+    "is_appropriate": true,
+    "pair_id": 2
+  },
+  {
+    "text": "A healthcare provider discusses Drew's sexual orientation with other staff in the break room.",
+    "info_type": "sexual_orientation",
+    "sender": "healthcare provider",
+    "recipient": "break room staff",
+    "subject": "Drew",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 440
+  },
+  {
+    "text": "A rehabilitation counselor mentions Jamie's drug treatment to a mutual acquaintance outside of work.",
+    "info_type": "substance_use",
+    "sender": "rehabilitation counselor",
+    "recipient": "mutual acquaintance",
+    "subject": "Jamie",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 486
+  },
+  {
+    "text": "Finley's manager provides a reference for Finley to a prospective employer, as Finley requested.",
+    "info_type": "employment",
+    "sender": "manager",
+    "recipient": "prospective employer",
+    "subject": "Finley",
+    "transmission_principle": "consent",
+    "is_appropriate": true,
+    "pair_id": 195
+  },
+  {
+    "text": "A voter registration office stores Avery's party affiliation as part of the official electoral record.",
+    "info_type": "political",
+    "sender": "voter registration / political operative",
+    "recipient": "electoral system",
+    "subject": "Avery",
+    "transmission_principle": "legal requirement",
+    "is_appropriate": true,
+    "pair_id": 320
+  },
+  {
+    "text": "A family member shares the news of Reese's engagement at a family gathering after Reese announced it.",
+    "info_type": "relationships",
+    "sender": "family member",
+    "recipient": "family (post-announcement)",
+    "subject": "Reese",
+    "transmission_principle": "post-consent sharing",
+    "is_appropriate": true,
+    "pair_id": 249
+  },
+  {
+    "text": "A therapist documents Quinn's mental health progress in a confidential clinical record.",
+    "info_type": "health",
+    "sender": "therapist",
+    "recipient": "clinical record system",
+    "subject": "Quinn",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 36
+  },
+  {
+    "text": "A delivery service shares Avery's address with a driver to complete a delivery Avery ordered.",
+    "info_type": "location",
+    "sender": "delivery service",
+    "recipient": "delivery driver",
+    "subject": "Avery",
+    "transmission_principle": "service fulfillment",
+    "is_appropriate": true,
+    "pair_id": 119
+  },
+  {
+    "text": "A court clerk processes Morgan's sealed juvenile record in the court database with restricted access.",
+    "info_type": "legal",
+    "sender": "court clerk",
+    "recipient": "restricted court database",
+    "subject": "Morgan",
+    "transmission_principle": "official duty",
+    "is_appropriate": true,
+    "pair_id": 287
+  },
+  {
+    "text": "A couples therapist writes a blog post about Cameron's marital problems using thinly disguised details.",
+    "info_type": "relationships",
+    "sender": "therapist",
+    "recipient": "blog readers",
+    "subject": "Cameron",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 220
+  },
+  {
+    "text": "A therapist posts about Quinn's mental health struggles in an anonymous online forum with identifying details.",
+    "info_type": "health",
+    "sender": "therapist",
+    "recipient": "online forum readers",
+    "subject": "Quinn",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 36
+  },
+  {
+    "text": "An accountant prepares Finley's tax filing using their detailed income information.",
+    "info_type": "financial",
+    "sender": "accountant",
+    "recipient": "tax authority",
+    "subject": "Finley",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 87
+  },
+  {
+    "text": "Jordan's immigration lawyer shares case details with a co-counsel who has been formally retained.",
+    "info_type": "legal",
+    "sender": "immigration lawyer",
+    "recipient": "co-counsel",
+    "subject": "Jordan",
+    "transmission_principle": "attorney-client privilege",
+    "is_appropriate": true,
+    "pair_id": 259
+  },
+  {
+    "text": "A bank officer reviews Morgan's account balance and credit history during a mortgage application.",
+    "info_type": "financial",
+    "sender": "bank officer",
+    "recipient": "loan committee",
+    "subject": "Morgan",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 76
+  },
+  {
+    "text": "A recruiter verifies Casey's employment history with a previous employer after Casey provided consent.",
+    "info_type": "employment",
+    "sender": "recruiter",
+    "recipient": "authorized previous employer",
+    "subject": "Casey",
+    "transmission_principle": "consent",
+    "is_appropriate": true,
+    "pair_id": 175
+  },
+  {
+    "text": "A neighbor tells the whole street that Jordan has converted to a different religion, causing social friction.",
+    "info_type": "religious",
+    "sender": "subject / neighbor",
+    "recipient": "the whole street",
+    "subject": "Jordan",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 369
+  },
+  {
+    "text": "A bank officer reviews Harper's account balance and credit history during a mortgage application.",
+    "info_type": "financial",
+    "sender": "bank officer",
+    "recipient": "loan committee",
+    "subject": "Harper",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 74
+  },
+  {
+    "text": "Finley shares their sobriety journey at an anonymous support group meeting.",
+    "info_type": "substance_use",
+    "sender": "subject / attendee",
+    "recipient": "support group",
+    "subject": "Finley",
+    "transmission_principle": "anonymous group norms",
+    "is_appropriate": true,
+    "pair_id": 474
+  },
+  {
+    "text": "A financial advisor discusses Cameron's investment portfolio with another client as a case study without permission.",
+    "info_type": "financial",
+    "sender": "financial advisor",
+    "recipient": "another client",
+    "subject": "Cameron",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 53
+  },
+  {
+    "text": "Parker voluntarily shares their political views in a structured town hall discussion.",
+    "info_type": "political",
+    "sender": "subject / colleague",
+    "recipient": "town hall participants",
+    "subject": "Parker",
+    "transmission_principle": "voluntary disclosure",
+    "is_appropriate": true,
+    "pair_id": 321
+  },
+  {
+    "text": "A family member shares the news of Avery's engagement at a family gathering after Avery announced it.",
+    "info_type": "relationships",
+    "sender": "family member",
+    "recipient": "family (post-announcement)",
+    "subject": "Avery",
+    "transmission_principle": "post-consent sharing",
+    "is_appropriate": true,
+    "pair_id": 211
+  },
+  {
+    "text": "A probation officer reviews Logan's case file as part of their official supervisory duties.",
+    "info_type": "legal",
+    "sender": "probation officer",
+    "recipient": "probation system",
+    "subject": "Logan",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 295
+  },
+  {
+    "text": "A rehabilitation counselor updates Morgan's treatment team about their progress in a confidential case meeting.",
+    "info_type": "substance_use",
+    "sender": "rehabilitation counselor",
+    "recipient": "treatment team",
+    "subject": "Morgan",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 475
+  },
+  {
+    "text": "Alex discloses their sexual orientation to a trusted friend in a private conversation.",
+    "info_type": "relationships",
+    "sender": "subject / classmate",
+    "recipient": "trusted friend",
+    "subject": "Alex",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 241
+  },
+  {
+    "text": "A neighbor tells the whole street that Emerson has converted to a different religion, causing social friction.",
+    "info_type": "religious",
+    "sender": "subject / neighbor",
+    "recipient": "the whole street",
+    "subject": "Emerson",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 380
+  },
+  {
+    "text": "A recruiter verifies Parker's employment history with a previous employer after Parker provided consent.",
+    "info_type": "employment",
+    "sender": "recruiter",
+    "recipient": "authorized previous employer",
+    "subject": "Parker",
+    "transmission_principle": "consent",
+    "is_appropriate": true,
+    "pair_id": 177
+  },
+  {
+    "text": "Harper comes out to their family on their own terms when they feel ready.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (self-disclosed)",
+    "subject": "Harper",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 413
+  },
+  {
+    "text": "An accountant prepares Jamie's tax filing using their detailed income information.",
+    "info_type": "financial",
+    "sender": "accountant",
+    "recipient": "tax authority",
+    "subject": "Jamie",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 78
+  },
+  {
+    "text": "A credit agency sells Quinn's detailed financial history to a data broker without notification.",
+    "info_type": "financial",
+    "sender": "credit agency",
+    "recipient": "data broker",
+    "subject": "Quinn",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 65
+  },
+  {
+    "text": "An HR manager discusses Cameron's performance review with Cameron's direct supervisor as part of the annual evaluation process.",
+    "info_type": "employment",
+    "sender": "HR manager",
+    "recipient": "direct supervisor",
+    "subject": "Cameron",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 162
+  },
+  {
+    "text": "Finley's immigration lawyer shares case details with a co-counsel who has been formally retained.",
+    "info_type": "legal",
+    "sender": "immigration lawyer",
+    "recipient": "co-counsel",
+    "subject": "Finley",
+    "transmission_principle": "attorney-client privilege",
+    "is_appropriate": true,
+    "pair_id": 288
+  },
+  {
+    "text": "A rehabilitation counselor mentions Morgan's drug treatment to a mutual acquaintance outside of work.",
+    "info_type": "substance_use",
+    "sender": "rehabilitation counselor",
+    "recipient": "mutual acquaintance",
+    "subject": "Morgan",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 475
+  },
+  {
+    "text": "A couples therapist discusses Emerson and their partner's relationship dynamics in a confidential therapy session.",
+    "info_type": "relationships",
+    "sender": "therapist",
+    "recipient": "the couple",
+    "subject": "Emerson",
+    "transmission_principle": "professional confidentiality",
+    "is_appropriate": true,
+    "pair_id": 239
+  },
+  {
+    "text": "A lawyer reveals Jamie's criminal record to a journalist for a story without Jamie's consent.",
+    "info_type": "legal",
+    "sender": "lawyer",
+    "recipient": "journalist",
+    "subject": "Jamie",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 252
+  },
+  {
+    "text": "A stalker uses a tracking device to monitor Emerson's daily movements without their knowledge.",
+    "info_type": "location",
+    "sender": "subject / stalker",
+    "recipient": "stalker",
+    "subject": "Emerson",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 148
+  },
+  {
+    "text": "A recruiter contacts Parker's current employer about their job search without Parker's permission.",
+    "info_type": "employment",
+    "sender": "recruiter",
+    "recipient": "current employer without consent",
+    "subject": "Parker",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 177
+  },
+  {
+    "text": "A campaign records Casey's donation amount as required by campaign finance law.",
+    "info_type": "political",
+    "sender": "campaign",
+    "recipient": "public finance record",
+    "subject": "Casey",
+    "transmission_principle": "legal obligation",
+    "is_appropriate": true,
+    "pair_id": 334
+  },
+  {
+    "text": "A delivery service shares Riley's address with a driver to complete a delivery Riley ordered.",
+    "info_type": "location",
+    "sender": "delivery service",
+    "recipient": "delivery driver",
+    "subject": "Riley",
+    "transmission_principle": "service fulfillment",
+    "is_appropriate": true,
+    "pair_id": 134
+  },
+  {
+    "text": "A court clerk looks up Morgan's sealed juvenile record to satisfy personal curiosity.",
+    "info_type": "legal",
+    "sender": "court clerk",
+    "recipient": "the clerk personally",
+    "subject": "Morgan",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 287
+  },
+  {
+    "text": "A priest shares details of Kendall's confession with church elders to influence their standing.",
+    "info_type": "religious",
+    "sender": "priest",
+    "recipient": "church elders",
+    "subject": "Kendall",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 355
+  },
+  {
+    "text": "A campaign staffer leaks Finley's large donation to opposition media to embarrass them.",
+    "info_type": "political",
+    "sender": "campaign",
+    "recipient": "opposition media",
+    "subject": "Finley",
+    "transmission_principle": "no consent / malicious intent",
+    "is_appropriate": false,
+    "pair_id": 337
+  },
+  {
+    "text": "Sage comes out to their family on their own terms when they feel ready.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (self-disclosed)",
+    "subject": "Sage",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 403
+  },
+  {
+    "text": "A doctor discusses Reese's diagnosis of chronic back pain at a dinner party with friends for casual conversation.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "dinner party friends",
+    "subject": "Reese",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 16
+  },
+  {
+    "text": "A friend outs Dakota's sexual orientation to Dakota's conservative family without permission.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (outed without consent)",
+    "subject": "Dakota",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 402
+  },
+  {
+    "text": "A doctor discusses Morgan's diagnosis of a recent cancer diagnosis with a consulting specialist to determine the best treatment plan.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "consulting specialist",
+    "subject": "Morgan",
+    "transmission_principle": "need-to-know",
+    "is_appropriate": true,
+    "pair_id": 38
+  },
+  {
+    "text": "Avery's parent discusses their child's allergy information with the school nurse for safety purposes.",
+    "info_type": "health",
+    "sender": "parent",
+    "recipient": "school nurse",
+    "subject": "Avery",
+    "transmission_principle": "child safety",
+    "is_appropriate": true,
+    "pair_id": 29
+  },
+  {
+    "text": "Harper's coworker tells the entire office about Harper's new romantic relationship before Harper has shared it.",
+    "info_type": "relationships",
+    "sender": "subject / coworker",
+    "recipient": "entire office",
+    "subject": "Harper",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 228
+  },
+  {
+    "text": "Logan's spouse discusses their shared household budget during a financial planning session with a certified planner.",
+    "info_type": "financial",
+    "sender": "spouse",
+    "recipient": "certified financial planner",
+    "subject": "Logan",
+    "transmission_principle": "mutual consent",
+    "is_appropriate": true,
+    "pair_id": 85
+  },
+  {
+    "text": "Harper tells their close friend about their new romantic relationship when they feel ready to share.",
+    "info_type": "relationships",
+    "sender": "subject / coworker",
+    "recipient": "close friend",
+    "subject": "Harper",
+    "transmission_principle": "voluntary disclosure",
+    "is_appropriate": true,
+    "pair_id": 228
+  },
+  {
+    "text": "A victim advocate shares Logan's testimony with the prosecuting attorney for case preparation.",
+    "info_type": "legal",
+    "sender": "victim advocate",
+    "recipient": "prosecuting attorney",
+    "subject": "Logan",
+    "transmission_principle": "legal process",
+    "is_appropriate": true,
+    "pair_id": 279
+  },
+  {
+    "text": "A campaign records Kendall's donation amount as required by campaign finance law.",
+    "info_type": "political",
+    "sender": "campaign",
+    "recipient": "public finance record",
+    "subject": "Kendall",
+    "transmission_principle": "legal obligation",
+    "is_appropriate": true,
+    "pair_id": 308
+  },
+  {
+    "text": "A couples therapist discusses Cameron and their partner's relationship dynamics in a confidential therapy session.",
+    "info_type": "relationships",
+    "sender": "therapist",
+    "recipient": "the couple",
+    "subject": "Cameron",
+    "transmission_principle": "professional confidentiality",
+    "is_appropriate": true,
+    "pair_id": 220
+  },
+  {
+    "text": "Jordan discloses their sexual orientation to a trusted friend in a private conversation.",
+    "info_type": "relationships",
+    "sender": "subject / classmate",
+    "recipient": "trusted friend",
+    "subject": "Jordan",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 225
+  },
+  {
+    "text": "A healthcare provider asks about Casey's sexual orientation in a private intake form for relevant medical care.",
+    "info_type": "sexual_orientation",
+    "sender": "healthcare provider",
+    "recipient": "medical record (confidential)",
+    "subject": "Casey",
+    "transmission_principle": "medical relevance",
+    "is_appropriate": true,
+    "pair_id": 406
+  },
+  {
+    "text": "A bank officer shares Drew's account balance and credit history with a neighbor over coffee.",
+    "info_type": "financial",
+    "sender": "bank officer",
+    "recipient": "neighbor",
+    "subject": "Drew",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 97
+  },
+  {
+    "text": "A coworker reveals Dakota's past struggle with alcohol at a team meeting after overhearing a private call.",
+    "info_type": "substance_use",
+    "sender": "subject / coworker",
+    "recipient": "team meeting attendees",
+    "subject": "Dakota",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 476
+  },
+  {
+    "text": "A company's payroll clerk shares Finley's salary details with other employees during casual conversation.",
+    "info_type": "employment",
+    "sender": "payroll department",
+    "recipient": "other employees",
+    "subject": "Finley",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 161
+  },
+  {
+    "text": "An HR manager discusses Finley's performance review with Finley's direct supervisor as part of the annual evaluation process.",
+    "info_type": "employment",
+    "sender": "HR manager",
+    "recipient": "direct supervisor",
+    "subject": "Finley",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 150
+  },
+  {
+    "text": "Taylor tells their close friend about their new romantic relationship when they feel ready to share.",
+    "info_type": "relationships",
+    "sender": "subject / coworker",
+    "recipient": "close friend",
+    "subject": "Taylor",
+    "transmission_principle": "voluntary disclosure",
+    "is_appropriate": true,
+    "pair_id": 245
+  },
+  {
+    "text": "A victim advocate shares Logan's testimony details on a podcast about famous cases.",
+    "info_type": "legal",
+    "sender": "victim advocate",
+    "recipient": "podcast listeners",
+    "subject": "Logan",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 279
+  },
+  {
+    "text": "A financial advisor discusses Cameron's investment portfolio in a scheduled advisory meeting.",
+    "info_type": "financial",
+    "sender": "financial advisor",
+    "recipient": "the client themselves",
+    "subject": "Cameron",
+    "transmission_principle": "fiduciary duty",
+    "is_appropriate": true,
+    "pair_id": 53
+  },
+  {
+    "text": "A colleague reports Parker's private political opinions to their employer to cause professional harm.",
+    "info_type": "political",
+    "sender": "subject / colleague",
+    "recipient": "employer",
+    "subject": "Parker",
+    "transmission_principle": "no consent / malicious intent",
+    "is_appropriate": false,
+    "pair_id": 321
+  },
+  {
+    "text": "A delivery service shares Jordan's home address with third-party advertisers for targeted mail.",
+    "info_type": "location",
+    "sender": "delivery service",
+    "recipient": "third-party advertisers",
+    "subject": "Jordan",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 129
+  },
+  {
+    "text": "Logan comes out to their family on their own terms when they feel ready.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (self-disclosed)",
+    "subject": "Logan",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 442
+  },
+  {
+    "text": "A delivery service shares Avery's address with a driver to complete a delivery Avery ordered.",
+    "info_type": "location",
+    "sender": "delivery service",
+    "recipient": "delivery driver",
+    "subject": "Avery",
+    "transmission_principle": "service fulfillment",
+    "is_appropriate": true,
+    "pair_id": 123
+  },
+  {
+    "text": "A doctor discusses Alex's diagnosis of chronic back pain at a dinner party with friends for casual conversation.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "dinner party friends",
+    "subject": "Alex",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 0
+  },
+  {
+    "text": "A delivery service shares Avery's home address with third-party advertisers for targeted mail.",
+    "info_type": "location",
+    "sender": "delivery service",
+    "recipient": "third-party advertisers",
+    "subject": "Avery",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 123
+  },
+  {
+    "text": "A court clerk looks up Kendall's sealed juvenile record to satisfy personal curiosity.",
+    "info_type": "legal",
+    "sender": "court clerk",
+    "recipient": "the clerk personally",
+    "subject": "Kendall",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 263
+  },
+  {
+    "text": "A campaign staffer leaks Sage's large donation to opposition media to embarrass them.",
+    "info_type": "political",
+    "sender": "campaign",
+    "recipient": "opposition media",
+    "subject": "Sage",
+    "transmission_principle": "no consent / malicious intent",
+    "is_appropriate": false,
+    "pair_id": 323
+  },
+  {
+    "text": "Morgan comes out to their family on their own terms when they feel ready.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (self-disclosed)",
+    "subject": "Morgan",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 427
+  },
+  {
+    "text": "An employer uses GPS tracking to monitor Morgan's location during weekends and personal time.",
+    "info_type": "location",
+    "sender": "parent / employer",
+    "recipient": "employer",
+    "subject": "Morgan",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 147
+  },
+  {
+    "text": "A political operative obtains Alex's voting record and uses it for targeted intimidation.",
+    "info_type": "political",
+    "sender": "voter registration / political operative",
+    "recipient": "political operative",
+    "subject": "Alex",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 311
+  },
+  {
+    "text": "A doctor discusses Reese's diagnosis of depression at a dinner party with friends for casual conversation.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "dinner party friends",
+    "subject": "Reese",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 2
+  },
+  {
+    "text": "A classmate outs Alex's sexual orientation to the entire class without Alex's permission.",
+    "info_type": "relationships",
+    "sender": "subject / classmate",
+    "recipient": "entire class",
+    "subject": "Alex",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 241
+  },
+  {
+    "text": "A bank officer shares Harper's account balance and credit history with a neighbor over coffee.",
+    "info_type": "financial",
+    "sender": "bank officer",
+    "recipient": "neighbor",
+    "subject": "Harper",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 74
+  },
+  {
+    "text": "An employer uses GPS tracking to monitor Reese's location during weekends and personal time.",
+    "info_type": "location",
+    "sender": "parent / employer",
+    "recipient": "employer",
+    "subject": "Reese",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 114
+  },
+  {
+    "text": "A rehabilitation counselor updates Cameron's treatment team about their progress in a confidential case meeting.",
+    "info_type": "substance_use",
+    "sender": "rehabilitation counselor",
+    "recipient": "treatment team",
+    "subject": "Cameron",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 493
+  },
+  {
+    "text": "A doctor discusses Avery's diagnosis of an eating disorder at a dinner party with friends for casual conversation.",
+    "info_type": "health",
+    "sender": "doctor",
+    "recipient": "dinner party friends",
+    "subject": "Avery",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 46
+  },
+  {
+    "text": "A couples therapist writes a blog post about Taylor's marital problems using thinly disguised details.",
+    "info_type": "relationships",
+    "sender": "therapist",
+    "recipient": "blog readers",
+    "subject": "Taylor",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 223
+  },
+  {
+    "text": "Harper's spouse discusses their shared household budget during a financial planning session with a certified planner.",
+    "info_type": "financial",
+    "sender": "spouse",
+    "recipient": "certified financial planner",
+    "subject": "Harper",
+    "transmission_principle": "mutual consent",
+    "is_appropriate": true,
+    "pair_id": 75
+  },
+  {
+    "text": "A rehabilitation counselor mentions Taylor's drug treatment to a mutual acquaintance outside of work.",
+    "info_type": "substance_use",
+    "sender": "rehabilitation counselor",
+    "recipient": "mutual acquaintance",
+    "subject": "Taylor",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 492
+  },
+  {
+    "text": "A recruiter verifies Casey's employment history with a previous employer after Casey provided consent.",
+    "info_type": "employment",
+    "sender": "recruiter",
+    "recipient": "authorized previous employer",
+    "subject": "Casey",
+    "transmission_principle": "consent",
+    "is_appropriate": true,
+    "pair_id": 190
+  },
+  {
+    "text": "Finley's manager tells a client about Finley's plans to leave the company before Finley has announced it.",
+    "info_type": "employment",
+    "sender": "manager",
+    "recipient": "client",
+    "subject": "Finley",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 195
+  },
+  {
+    "text": "A classmate outs Jordan's sexual orientation to the entire class without Jordan's permission.",
+    "info_type": "relationships",
+    "sender": "subject / classmate",
+    "recipient": "entire class",
+    "subject": "Jordan",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 225
+  },
+  {
+    "text": "A lawyer discusses Taylor's criminal record with a judge in a sealed courtroom proceeding.",
+    "info_type": "legal",
+    "sender": "lawyer",
+    "recipient": "judge in sealed proceeding",
+    "subject": "Taylor",
+    "transmission_principle": "legal process",
+    "is_appropriate": true,
+    "pair_id": 292
+  },
+  {
+    "text": "A parent uses a family safety app to check Alex's location after school to ensure they arrived home safely.",
+    "info_type": "location",
+    "sender": "parent / employer",
+    "recipient": "parent",
+    "subject": "Alex",
+    "transmission_principle": "child safety",
+    "is_appropriate": true,
+    "pair_id": 122
+  },
+  {
+    "text": "A delivery service shares Avery's home address with third-party advertisers for targeted mail.",
+    "info_type": "location",
+    "sender": "delivery service",
+    "recipient": "third-party advertisers",
+    "subject": "Avery",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 119
+  },
+  {
+    "text": "An employer uses GPS tracking to monitor Morgan's location during weekends and personal time.",
+    "info_type": "location",
+    "sender": "parent / employer",
+    "recipient": "employer",
+    "subject": "Morgan",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 145
+  },
+  {
+    "text": "Quinn's manager tells a client about Quinn's plans to leave the company before Quinn has announced it.",
+    "info_type": "employment",
+    "sender": "manager",
+    "recipient": "client",
+    "subject": "Quinn",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 186
+  },
+  {
+    "text": "A rehabilitation counselor updates Jamie's treatment team about their progress in a confidential case meeting.",
+    "info_type": "substance_use",
+    "sender": "rehabilitation counselor",
+    "recipient": "treatment team",
+    "subject": "Jamie",
+    "transmission_principle": "professional duty",
+    "is_appropriate": true,
+    "pair_id": 486
+  },
+  {
+    "text": "Jordan shares their religious conversion story at a community gathering where they chose to speak.",
+    "info_type": "religious",
+    "sender": "subject / neighbor",
+    "recipient": "community gathering",
+    "subject": "Jordan",
+    "transmission_principle": "voluntary self-disclosure",
+    "is_appropriate": true,
+    "pair_id": 369
+  },
+  {
+    "text": "A healthcare provider discusses Drew's sexual orientation with other staff in the break room.",
+    "info_type": "sexual_orientation",
+    "sender": "healthcare provider",
+    "recipient": "break room staff",
+    "subject": "Drew",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 425
+  },
+  {
+    "text": "An accountant brags about Jamie's high income to friends at a party.",
+    "info_type": "financial",
+    "sender": "accountant",
+    "recipient": "friends at a party",
+    "subject": "Jamie",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 78
+  },
+  {
+    "text": "Casey discloses their history of alcohol dependency to their doctor for appropriate medical treatment.",
+    "info_type": "substance_use",
+    "sender": "subject / coworker",
+    "recipient": "doctor",
+    "subject": "Casey",
+    "transmission_principle": "voluntary disclosure for care",
+    "is_appropriate": true,
+    "pair_id": 455
+  },
+  {
+    "text": "A friend outs Morgan's sexual orientation to Morgan's conservative family without permission.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (outed without consent)",
+    "subject": "Morgan",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 427
+  },
+  {
+    "text": "Jordan's immigration lawyer discusses case specifics with a friend who is also a lawyer but not on the case.",
+    "info_type": "legal",
+    "sender": "immigration lawyer",
+    "recipient": "uninvolved friend-lawyer",
+    "subject": "Jordan",
+    "transmission_principle": "no authorization",
+    "is_appropriate": false,
+    "pair_id": 259
+  },
+  {
+    "text": "A friend outs Sage's sexual orientation to Sage's conservative family without permission.",
+    "info_type": "sexual_orientation",
+    "sender": "subject / friend",
+    "recipient": "family (outed without consent)",
+    "subject": "Sage",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 403
+  },
+  {
+    "text": "A school accommodates Casey's religious dietary needs in the cafeteria without disclosing the reason to classmates.",
+    "info_type": "religious",
+    "sender": "school / teacher",
+    "recipient": "cafeteria staff",
+    "subject": "Casey",
+    "transmission_principle": "need-to-know",
+    "is_appropriate": true,
+    "pair_id": 392
+  },
+  {
+    "text": "A credit agency provides Quinn's credit score to a landlord after Quinn authorized a background check.",
+    "info_type": "financial",
+    "sender": "credit agency",
+    "recipient": "authorized landlord",
+    "subject": "Quinn",
+    "transmission_principle": "consent",
+    "is_appropriate": true,
+    "pair_id": 65
+  },
+  {
+    "text": "A healthcare provider asks about Parker's sexual orientation in a private intake form for relevant medical care.",
+    "info_type": "sexual_orientation",
+    "sender": "healthcare provider",
+    "recipient": "medical record (confidential)",
+    "subject": "Parker",
+    "transmission_principle": "medical relevance",
+    "is_appropriate": true,
+    "pair_id": 416
+  },
+  {
+    "text": "An HR manager gossips about Harper's poor performance review with employees from another department.",
+    "info_type": "employment",
+    "sender": "HR manager",
+    "recipient": "unrelated employees",
+    "subject": "Harper",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 192
+  },
+  {
+    "text": "A priest shares details of Finley's confession with church elders to influence their standing.",
+    "info_type": "religious",
+    "sender": "priest",
+    "recipient": "church elders",
+    "subject": "Finley",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 362
+  },
+  {
+    "text": "A teacher announces to the class that Avery cannot eat certain foods because of their religion.",
+    "info_type": "religious",
+    "sender": "school / teacher",
+    "recipient": "entire class",
+    "subject": "Avery",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 357
+  },
+  {
+    "text": "An insurance company shares Kendall's medical records with a marketing firm for targeted advertising.",
+    "info_type": "health",
+    "sender": "insurance company",
+    "recipient": "marketing firm",
+    "subject": "Kendall",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 41
+  },
+  {
+    "text": "A bank officer shares Morgan's account balance and credit history with a neighbor over coffee.",
+    "info_type": "financial",
+    "sender": "bank officer",
+    "recipient": "neighbor",
+    "subject": "Morgan",
+    "transmission_principle": "no legitimate purpose",
+    "is_appropriate": false,
+    "pair_id": 76
+  },
+  {
+    "text": "A campaign staffer leaks Kendall's large donation to opposition media to embarrass them.",
+    "info_type": "political",
+    "sender": "campaign",
+    "recipient": "opposition media",
+    "subject": "Kendall",
+    "transmission_principle": "no consent / malicious intent",
+    "is_appropriate": false,
+    "pair_id": 308
+  },
+  {
+    "text": "A delivery service shares Jordan's address with a driver to complete a delivery Jordan ordered.",
+    "info_type": "location",
+    "sender": "delivery service",
+    "recipient": "delivery driver",
+    "subject": "Jordan",
+    "transmission_principle": "service fulfillment",
+    "is_appropriate": true,
+    "pair_id": 129
+  },
+  {
+    "text": "A parent uses a family safety app to check Morgan's location after school to ensure they arrived home safely.",
+    "info_type": "location",
+    "sender": "parent / employer",
+    "recipient": "parent",
+    "subject": "Morgan",
+    "transmission_principle": "child safety",
+    "is_appropriate": true,
+    "pair_id": 145
+  },
+  {
+    "text": "A campaign records Sage's donation amount as required by campaign finance law.",
+    "info_type": "political",
+    "sender": "campaign",
+    "recipient": "public finance record",
+    "subject": "Sage",
+    "transmission_principle": "legal obligation",
+    "is_appropriate": true,
+    "pair_id": 323
+  },
+  {
+    "text": "A recruiter contacts Casey's current employer about their job search without Casey's permission.",
+    "info_type": "employment",
+    "sender": "recruiter",
+    "recipient": "current employer without consent",
+    "subject": "Casey",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 190
+  },
+  {
+    "text": "Quinn's manager provides a reference for Quinn to a prospective employer, as Quinn requested.",
+    "info_type": "employment",
+    "sender": "manager",
+    "recipient": "prospective employer",
+    "subject": "Quinn",
+    "transmission_principle": "consent",
+    "is_appropriate": true,
+    "pair_id": 186
+  },
+  {
+    "text": "A priest keeps Finley's confession completely confidential as required by the seal of confession.",
+    "info_type": "religious",
+    "sender": "priest",
+    "recipient": "no one (kept confidential)",
+    "subject": "Finley",
+    "transmission_principle": "seal of confession",
+    "is_appropriate": true,
+    "pair_id": 362
+  },
+  {
+    "text": "A priest shares details of Drew's confession with church elders to influence their standing.",
+    "info_type": "religious",
+    "sender": "priest",
+    "recipient": "church elders",
+    "subject": "Drew",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 365
+  },
+  {
+    "text": "A recruiter contacts Casey's current employer about their job search without Casey's permission.",
+    "info_type": "employment",
+    "sender": "recruiter",
+    "recipient": "current employer without consent",
+    "subject": "Casey",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 175
+  },
+  {
+    "text": "A family member reveals that Casey is going through fertility treatments to relatives without Casey's permission.",
+    "info_type": "relationships",
+    "sender": "family member",
+    "recipient": "relatives without permission",
+    "subject": "Casey",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 230
+  },
+  {
+    "text": "A lawyer reveals Jamie's criminal record to a journalist for a story without Jamie's consent.",
+    "info_type": "legal",
+    "sender": "lawyer",
+    "recipient": "journalist",
+    "subject": "Jamie",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 256
+  },
+  {
+    "text": "A lawyer reveals Taylor's criminal record to a journalist for a story without Taylor's consent.",
+    "info_type": "legal",
+    "sender": "lawyer",
+    "recipient": "journalist",
+    "subject": "Taylor",
+    "transmission_principle": "no consent",
+    "is_appropriate": false,
+    "pair_id": 292
+  },
+  {
+    "text": "Jamie discloses their history of alcohol dependency to their doctor for appropriate medical treatment.",
+    "info_type": "substance_use",
+    "sender": "subject / coworker",
+    "recipient": "doctor",
+    "subject": "Jamie",
+    "transmission_principle": "voluntary disclosure for care",
+    "is_appropriate": true,
+    "pair_id": 465
+  },
+  {
+    "text": "A family member shares the news of Casey's engagement at a family gathering after Casey announced it.",
+    "info_type": "relationships",
+    "sender": "family member",
+    "recipient": "family (post-announcement)",
+    "subject": "Casey",
+    "transmission_principle": "post-consent sharing",
+    "is_appropriate": true,
+    "pair_id": 230
+  }
+]

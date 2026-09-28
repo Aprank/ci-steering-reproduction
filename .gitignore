@@ -1,0 +1,64 @@
+# ---- Secrets (never commit) ----
+secrets.env
+secrets*.env
+.env
+.env.*
+.api_key
+*.key
+*.pem
+
+# ---- Large tensors / model weights ----
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
+*.onnx
+*.h5
+*.ckpt
+
+# ---- Regenerated pipeline outputs (large) ----
+outputs/
+HF_cache/
+.cache/
+
+# ---- External benchmarks (clone from source) ----
+data/confaide/
+data/privaci_bench/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ---- Notebooks / envs / logs ----
+.ipynb_checkpoints/
+venv/
+.venv/
+*.conda
+wandb/
+mlruns/
+.coverage
+htmlcov/
+.tox/
+.nox/
+*.log
+logs/
+
+# NOTE: results/ IS committed on purpose (small JSON/JSONL/PNG subset only).

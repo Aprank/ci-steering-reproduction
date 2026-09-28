@@ -1,0 +1,32 @@
+{
+  "model": "Qwen2.5-7B-Instruct",
+  "layer": 21,
+  "layer_note": "75th-percentile layer (paper Appendix G)",
+  "chance_level_5class": 0.2,
+  "selectivity_matrix": {
+    "info_type": {
+      "info_type": 1.0,
+      "recipient": 0.20800000000000002,
+      "transmission_principle": 0.20600000000000002
+    },
+    "recipient": {
+      "info_type": 0.20800000000000002,
+      "recipient": 1.0,
+      "transmission_principle": 0.21599999999999997
+    },
+    "transmission_principle": {
+      "info_type": 0.21200000000000002,
+      "recipient": 0.20400000000000001,
+      "transmission_principle": 1.0
+    }
+  },
+  "permutation_test": {
+    "real_mean_abs_cosine": 0.9967386554484065,
+    "null_mean": 0.9986194434498482,
+    "null_std": 0.0008311370484095522,
+    "p_value": 0.037,
+    "effect_size_sigma": 2.2629093225357533,
+    "n_permutations": 1000,
+    "seed": 42
+  }
+}

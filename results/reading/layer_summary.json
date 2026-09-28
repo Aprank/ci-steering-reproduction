@@ -1,0 +1,198 @@
+{
+  "0": {
+    "layer": 0,
+    "pca_accuracy": 0.72,
+    "pca_auroc": 0.7218,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "1": {
+    "layer": 1,
+    "pca_accuracy": 0.73,
+    "pca_auroc": 0.6985,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "2": {
+    "layer": 2,
+    "pca_accuracy": 0.68,
+    "pca_auroc": 0.6815000000000001,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "3": {
+    "layer": 3,
+    "pca_accuracy": 0.65,
+    "pca_auroc": 0.6805,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "4": {
+    "layer": 4,
+    "pca_accuracy": 0.63,
+    "pca_auroc": 0.7039,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "5": {
+    "layer": 5,
+    "pca_accuracy": 0.61,
+    "pca_auroc": 0.5958000000000001,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "6": {
+    "layer": 6,
+    "pca_accuracy": 0.59,
+    "pca_auroc": 0.5834,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "7": {
+    "layer": 7,
+    "pca_accuracy": 0.57,
+    "pca_auroc": 0.5808,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "8": {
+    "layer": 8,
+    "pca_accuracy": 0.6,
+    "pca_auroc": 0.6007,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 0.9999999999999999
+  },
+  "9": {
+    "layer": 9,
+    "pca_accuracy": 0.63,
+    "pca_auroc": 0.6402,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "10": {
+    "layer": 10,
+    "pca_accuracy": 0.55,
+    "pca_auroc": 0.5928000000000001,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "11": {
+    "layer": 11,
+    "pca_accuracy": 0.6,
+    "pca_auroc": 0.5977000000000001,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "12": {
+    "layer": 12,
+    "pca_accuracy": 0.59,
+    "pca_auroc": 0.5776,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "13": {
+    "layer": 13,
+    "pca_accuracy": 0.63,
+    "pca_auroc": 0.6916,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "14": {
+    "layer": 14,
+    "pca_accuracy": 0.8,
+    "pca_auroc": 0.8938,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "15": {
+    "layer": 15,
+    "pca_accuracy": 0.83,
+    "pca_auroc": 0.9329,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "16": {
+    "layer": 16,
+    "pca_accuracy": 0.88,
+    "pca_auroc": 0.9513,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "17": {
+    "layer": 17,
+    "pca_accuracy": 0.86,
+    "pca_auroc": 0.9518,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "18": {
+    "layer": 18,
+    "pca_accuracy": 0.84,
+    "pca_auroc": 0.8968,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "19": {
+    "layer": 19,
+    "pca_accuracy": 0.73,
+    "pca_auroc": 0.8361,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "20": {
+    "layer": 20,
+    "pca_accuracy": 0.76,
+    "pca_auroc": 0.8171,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 1.0
+  },
+  "21": {
+    "layer": 21,
+    "pca_accuracy": 0.8,
+    "pca_auroc": 0.8623999999999999,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 0.9999999999999999
+  },
+  "22": {
+    "layer": 22,
+    "pca_accuracy": 0.86,
+    "pca_auroc": 0.904,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 0.9999999999999999
+  },
+  "23": {
+    "layer": 23,
+    "pca_accuracy": 0.86,
+    "pca_auroc": 0.9053000000000001,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 0.9999999999999999
+  },
+  "24": {
+    "layer": 24,
+    "pca_accuracy": 0.82,
+    "pca_auroc": 0.8663000000000001,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 0.9999999999999999
+  },
+  "25": {
+    "layer": 25,
+    "pca_accuracy": 0.83,
+    "pca_auroc": 0.8844,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 0.9999999999999999
+  },
+  "26": {
+    "layer": 26,
+    "pca_accuracy": 0.82,
+    "pca_auroc": 0.8829,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 0.9999999999999999
+  },
+  "27": {
+    "layer": 27,
+    "pca_accuracy": 0.84,
+    "pca_auroc": 0.8921,
+    "probe_accuracy": 1.0,
+    "probe_auroc": 0.9999999999999999
+  }
+}

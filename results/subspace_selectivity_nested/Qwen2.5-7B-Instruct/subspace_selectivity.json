@@ -1,0 +1,50 @@
+{
+  "model": "Qwen2.5-7B-Instruct",
+  "layer": 21,
+  "layer_note": "75th-percentile layer (paper Appendix G)",
+  "chance_level_5class": 0.2,
+  "selectivity_matrix": {
+    "info_type": {
+      "info_type": 1.0,
+      "recipient": 0.20800000000000002,
+      "transmission_principle": 0.20600000000000002
+    },
+    "recipient": {
+      "info_type": 0.20800000000000002,
+      "recipient": 1.0,
+      "transmission_principle": 0.21599999999999997
+    },
+    "transmission_principle": {
+      "info_type": 0.21200000000000002,
+      "recipient": 0.20400000000000001,
+      "transmission_principle": 1.0
+    }
+  },
+  "selectivity_matrix_nested": {
+    "info_type": {
+      "info_type": 1.0,
+      "recipient": 0.128,
+      "transmission_principle": 0.11000000000000001
+    },
+    "recipient": {
+      "info_type": 0.118,
+      "recipient": 0.998,
+      "transmission_principle": 0.11400000000000002
+    },
+    "transmission_principle": {
+      "info_type": 0.132,
+      "recipient": 0.182,
+      "transmission_principle": 1.0
+    }
+  },
+  "protocol": "nested = LDA re-fit inside every fold (unbiased); selectivity_matrix = LDA fit on full data (optimistic diagonal)",
+  "permutation_test": {
+    "real_mean_abs_cosine": 0.9967386554484065,
+    "null_mean": 0.9986504276564965,
+    "null_std": 0.0008123134988451306,
+    "p_value": 0.04,
+    "effect_size_sigma": 2.353490340193735,
+    "n_permutations": 200,
+    "seed": 42
+  }
+}
