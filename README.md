@@ -79,7 +79,8 @@
 
 | 文件 | 内容 |
 |---|---|
-| `AUDIT_REPORT.md` | **评测审计报告（步骤 1–5）**，含实测/推断/未验证三级标注 |
+| **`ROUND2_REPORT.md`** | **第二轮（T0–T7）：评委授权感知修复、最终记录、LDA 更正、盲审包、关系型场景** — 所有结论标注 实测/代码检查/推断/未验证 |
+| `AUDIT_REPORT.md` | 第一轮评测审计（步骤 1–5）；**部分声明已在 ROUND2_REPORT.md 中降级更正** |
 | `EXPERIMENT_REPORT.md` | 完整复现实验报告 |
 | `REPRODUCTION_RESULTS.md` | 复现结果汇总 |
 | `FINDING3_VERIFICATION.md` | Finding 3 专项验证（含全部代码修改记录） |
