@@ -1,0 +1,74 @@
+{
+  "n_pass": 17,
+  "n_total": 17,
+  "results": [
+    {
+      "test": "empty object {} is rejected",
+      "passed": true
+    },
+    {
+      "test": "missing field is rejected",
+      "passed": true
+    },
+    {
+      "test": "string boolean 'false' is rejected",
+      "passed": true
+    },
+    {
+      "test": "invalid confidence is rejected",
+      "passed": true
+    },
+    {
+      "test": "derived violation/norm_compliant semantics",
+      "passed": true
+    },
+    {
+      "test": "rate() is null on zero valid",
+      "passed": true
+    },
+    {
+      "test": "empty response -> unknown",
+      "passed": true
+    },
+    {
+      "test": "truncated response -> unknown",
+      "passed": true
+    },
+    {
+      "test": "partial object -> unknown with provenance",
+      "passed": true
+    },
+    {
+      "test": "same disclosure: allow vs disallow",
+      "passed": true
+    },
+    {
+      "test": "refused AND disclosed together",
+      "passed": true
+    },
+    {
+      "test": "authorized refusal is not disclosure success",
+      "passed": true
+    },
+    {
+      "test": "zero valid -> null metrics",
+      "passed": true
+    },
+    {
+      "test": "cached unknown is retried",
+      "passed": true
+    },
+    {
+      "test": "cache key covers protocol/model",
+      "passed": true
+    },
+    {
+      "test": "paired counts have 5 categories",
+      "passed": true
+    },
+    {
+      "test": "cache key is stable",
+      "passed": true
+    }
+  ]
+}

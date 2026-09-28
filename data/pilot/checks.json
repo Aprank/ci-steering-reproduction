@@ -1,0 +1,62 @@
+{
+  "R2_policy_differs_only_in_auth_clause": {
+    "passed": true,
+    "n": 40,
+    "n_passed": 40
+  },
+  "R3_strength_differs_only_in_task_clause": {
+    "passed": true,
+    "n": 40,
+    "n_passed": 40
+  },
+  "R1_axes_do_not_mention_each_other": {
+    "passed": true,
+    "auth_clause_mentions_task_words": 0,
+    "task_clause_mentions_auth_words": 0
+  },
+  "R4_entity_isolation": {
+    "passed": true,
+    "shared_entities": {},
+    "n_unique_entities": 50
+  },
+  "R5_template_diversity": {
+    "auth_families_used": 10,
+    "task_families_used": 10,
+    "domains": 20,
+    "auth_x_task_confounded": false
+  },
+  "R6_precise_fact_matchable": {
+    "passed": true,
+    "n": 80
+  },
+  "R7_tfidf_control": {
+    "available": true,
+    "protocol": "TF-IDF(1-2gram) + logistic regression, leave-one-auth-family-out",
+    "mean_auroc": 0.825,
+    "per_family_auroc": {
+      "A1": 1.0,
+      "A10": 0.75,
+      "A2": 1.0,
+      "A3": 1.0,
+      "A4": 0.375,
+      "A5": 0.6875,
+      "A6": 0.875,
+      "A7": 0.5625,
+      "A8": 1.0,
+      "A9": 1.0
+    },
+    "interpretation": "If this control reaches the same AUROC as the activation probe, no special norm computation may be claimed."
+  },
+  "counts": {
+    "scenarios": 20,
+    "inputs": 80,
+    "per_policy": {
+      "disallow": 40,
+      "allow": 40
+    },
+    "per_strength": {
+      "normal": 40,
+      "integrity": 40
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "C1_no_negation_in_authorization": {
+    "passed": true,
+    "offenders": []
+  },
+  "C2_policy_differs_only_in_authorizer_name": {
+    "passed": true,
+    "issues": []
+  },
+  "C3_strength_differs_only_in_task_clause": {
+    "passed": true,
+    "issues": []
+  },
+  "C4_authorizer_name_does_not_determine_label": {
+    "passed": true,
+    "n_names": 40,
+    "note": "counterbalanced: half the scenarios target person A, half person B, so a given name serves as both target and authorizer across the dataset",
+    "names_with_both_roles": 0
+  },
+  "C5_entity_isolation": {
+    "passed": true,
+    "shared": {}
+  },
+  "C6_template_family_covers_both_labels": {
+    "passed": true,
+    "families_with_one_label": []
+  },
+  "C7_tfidf_control_grouped": {
+    "available": true,
+    "protocol": "TF-IDF(1-2gram)+LR, GroupKFold by base scenario (held-out scenarios)",
+    "mean_auroc": 0.50625,
+    "per_fold": [
+      0.46875,
+      0.5,
+      0.53125,
+      0.53125,
+      0.5
+    ],
+    "v1_reference_auroc": 0.825,
+    "interpretation": "v1 leaked the label through the word 'not'; a near-chance value here means the v2 label requires comparing two mentions"
+  },
+  "counts": {
+    "scenarios": 20,
+    "inputs": 80,
+    "per_policy": {
+      "disallow": 40,
+      "allow": 40
+    },
+    "per_strength": {
+      "normal": 40,
+      "integrity": 40
+    }
+  }
+}

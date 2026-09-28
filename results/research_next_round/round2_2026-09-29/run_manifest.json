@@ -1,0 +1,245 @@
+{
+  "run_id": "round2_2026-09-29",
+  "created_utc": "2026-09-28T18:03:25+00:00",
+  "repo": {
+    "path": "/home/grx/restart/reproduction/Do LLMs Know What Is Private Internally/repo",
+    "commit": "3bcb1b51a1757df4cb063d66d94bb83ea01285ee",
+    "branch": "main",
+    "dirty_files": [
+      "?? data/pilot/",
+      "?? src/pilot_scenarios.py",
+      "?? src/run_manifest.py"
+    ],
+    "diff_sha256": null,
+    "diff_bytes": 0,
+    "remote": [
+      "origin\thttps://github.com/wang2226/CI-Steering.git (fetch)",
+      "origin\thttps://github.com/wang2226/CI-Steering.git (push)"
+    ],
+    "public_snapshot_note": "Public repo snapshot used by the independent review is 9a20fc0a7e627176f308daf6488a738778e07812; the working repo base commit is 5c5edc3 with uncommitted changes on top."
+  },
+  "models": {
+    "Qwen/Qwen2.5-7B-Instruct": {
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "n_layers": 28,
+      "hidden_size": 3584,
+      "_commit_hash": "a09a35458c702b33eeacc393d103063234e8bc28"
+    },
+    "mistralai/Mistral-7B-Instruct-v0.3": {
+      "architectures": [
+        "MistralForCausalLM"
+      ],
+      "n_layers": 32,
+      "hidden_size": 4096,
+      "_commit_hash": "c170c708c41dac9275d15a8fff4eca08d52bab71"
+    }
+  },
+  "hf_cache": {
+    "Qwen/Qwen2.5-7B-Instruct": {
+      "revisions": [
+        "a09a35458c702b33eeacc393d103063234e8bc28"
+      ],
+      "bytes_on_disk": 30485614580
+    },
+    "mistralai/Mistral-7B-Instruct-v0.3": {
+      "revisions": [
+        "c170c708c41dac9275d15a8fff4eca08d52bab71"
+      ],
+      "bytes_on_disk": 57990942770
+    },
+    "meta-llama/Llama-3.1-8B-Instruct": {
+      "revisions": [
+        "0e9e39f249a16976918f6564b8830bc894c89659"
+      ],
+      "bytes_on_disk": 103382
+    },
+    "meta-llama/Llama-2-7b-chat-hf": {
+      "revisions": [
+        "f5db02db724555f92da89c216ac04704f23d4590"
+      ],
+      "bytes_on_disk": 58744
+    }
+  },
+  "software": {
+    "python": "3.11.16",
+    "platform": "Linux-5.15.0-181-generic-x86_64-with-glibc2.35",
+    "torch": "2.14.0+cu130",
+    "transformers": "5.16.1",
+    "sklearn": "1.9.0",
+    "numpy": "2.4.6",
+    "openai": "3.7.0",
+    "peft": "0.20.0",
+    "accelerate": "1.14.0",
+    "cuda_available": true,
+    "torch_cuda": "13.0"
+  },
+  "gpu": {
+    "available": true,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5090",
+        "total_mib": 32607,
+        "used_mib": 24797,
+        "free_mib": 7313,
+        "util_pct": 100
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce RTX 5090",
+        "total_mib": 32607,
+        "used_mib": 18,
+        "free_mib": 32092,
+        "util_pct": 0
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA GeForce RTX 5090",
+        "total_mib": 32607,
+        "used_mib": 25555,
+        "free_mib": 6555,
+        "util_pct": 100
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA RTX 6000D",
+        "total_mib": 85651,
+        "used_mib": 17,
+        "free_mib": 85024,
+        "util_pct": 0
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA RTX 6000D",
+        "total_mib": 85651,
+        "used_mib": 9716,
+        "free_mib": 75325,
+        "util_pct": 20
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA GeForce RTX 5090",
+        "total_mib": 32607,
+        "used_mib": 27115,
+        "free_mib": 4995,
+        "util_pct": 64
+      }
+    ],
+    "idle_candidates": [
+      1,
+      3
+    ]
+  },
+  "immutable_inputs": {
+    "stimuli": [
+      {
+        "path": "data/stimuli/ci_decomposition_stimuli.json",
+        "size": 645033,
+        "mtime": "2026-09-02T16:11:04+00:00",
+        "sha256": "35cfc186de087472ce6b7aacde3d0bbbf55afb0559ac8b3b3ad30c194b767ac7"
+      },
+      {
+        "path": "data/stimuli/concept_stimuli.json",
+        "size": 346137,
+        "mtime": "2026-09-02T16:11:04+00:00",
+        "sha256": "ed699ae2a6dcb72e8a609f9e7b760d89aa2a488cc3fae6b121a4ae7d77988c7c"
+      },
+      {
+        "path": "data/stimuli/concept_stimuli_test.json",
+        "size": 69513,
+        "mtime": "2026-09-02T16:11:04+00:00",
+        "sha256": "460bbe777d8ff81d1c8e61b06ca6bd2b35ea490d753d8887ba9e9974d7b391ca"
+      },
+      {
+        "path": "data/stimuli/concept_stimuli_train.json",
+        "size": 276626,
+        "mtime": "2026-09-02T16:11:04+00:00",
+        "sha256": "aaf2f5d86043b92a0ce8cf5e8ed75b9e1c55a782b858481c651333bc33d27617"
+      },
+      {
+        "path": "data/stimuli/function_stimuli.json",
+        "size": 225747,
+        "mtime": "2026-09-02T16:51:39+00:00",
+        "sha256": "e659fa82bd0d82e2aaf6481ec38542cd11829874437da8c19e9717f236f9329f"
+      },
+      {
+        "path": "data/stimuli/function_stimuli_balanced.json",
+        "size": 225747,
+        "mtime": "2026-09-02T16:51:39+00:00",
+        "sha256": "e659fa82bd0d82e2aaf6481ec38542cd11829874437da8c19e9717f236f9329f"
+      }
+    ],
+    "pilot": [
+      {
+        "path": "data/pilot/checks.json",
+        "size": 1385,
+        "mtime": "2026-09-28T16:06:52+00:00",
+        "sha256": "3c3c99903d35770a44a893bc2f0909224742ba87b0a94fb3759b1ba4749ba508"
+      },
+      {
+        "path": "data/pilot/scenarios.jsonl",
+        "size": 84976,
+        "mtime": "2026-09-28T16:06:51+00:00",
+        "sha256": "104a2a55b0f9a1af56eef96c193723aed9b59065721e793fd882d1866144390d"
+      }
+    ],
+    "pilot_scenarios_script": "d5c39e1256073fab161e4b180bb453c0edb9d306ed0a410ac1cebb30a6f3740e"
+  },
+  "previous_artifacts": {
+    "audit_per_sample_jsonl": {
+      "path": "outputs/audit_confaide/confaide_Qwen2.5-7B-Instruct/per_sample.jsonl",
+      "size": 981403,
+      "sha256": "13fea93de938a2ab27ae0c6982ac62c45d7ae11f34d220a2ee52d38d5fba6113"
+    },
+    "audit_summary_json": {
+      "path": "outputs/audit_confaide/confaide_Qwen2.5-7B-Instruct/summary.json",
+      "size": 1907,
+      "sha256": "fe7e9c7415eca0243b7549cf0aa58f3f5704e7b67db8f9b800f724a2a191dc1d"
+    },
+    "audit_rejudge_json": {
+      "path": "outputs/audit_confaide/confaide_Qwen2.5-7B-Instruct/rejudge_unknown.json",
+      "size": 2740,
+      "sha256": "307e16e824c3faaf3cab378a8dad06aeb2b8bc6994b9d1f2fd9c43269e02e5eb"
+    },
+    "audit_judge_cache": {
+      "path": "outputs/audit_confaide/confaide_Qwen2.5-7B-Instruct/judge_cache/gpt_judge_cache.json",
+      "size": 392566,
+      "sha256": "d2d834777e1802f5b0ef4ae294a42fffda08213e3d197781d3be812a11b0efde"
+    },
+    "confaide_ci_transfer_results": {
+      "path": "outputs/confaide_ci_transfer/Qwen2.5-7B-Instruct/confaide_ci_transfer_results.json",
+      "size": 6598,
+      "sha256": "a6dc51e45a9f91cccb2071eafdafd1521d382b6ad8bb79a86fe339f416a5d2e4"
+    },
+    "origin_judge_cache": {
+      "path": "outputs/confaide_ci_transfer/Qwen2.5-7B-Instruct/judge_cache/gpt_judge_cache.json",
+      "size": 342311,
+      "sha256": "52c1a4fd0eebf8b07f85cf7deded4e5e6183ec49f4eeda09207606a3b71aa534"
+    }
+  },
+  "generation_defaults": {
+    "decoding": "greedy (do_sample=False, temperature=0)",
+    "max_new_tokens": 256,
+    "batch_size": 8,
+    "judge_max_tokens": 512,
+    "judge_temperature": 0.0,
+    "steering_layers": [
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "activation_token_position": "last real token (left padding)",
+    "layer_index_definition": "hook on model.model.layers[i] OUTPUT, so index 0 is the output of the FIRST transformer block, NOT the embedding"
+  },
+  "judge": {
+    "provider": "DeepSeek (OpenAI-compatible)",
+    "model_env": "DEEPSEEK_MODEL",
+    "key_present": false,
+    "note": "credentials are never written to the manifest"
+  },
+  "output_dir": "outputs/research_next_round/round2_2026-09-29"
+}
