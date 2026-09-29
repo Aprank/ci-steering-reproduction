@@ -1,0 +1,332 @@
+{
+  "run_id": "round3_2026-09-30",
+  "n_rows": 160,
+  "n_layers": 28,
+  "n_scenarios": 20,
+  "outer_folds_primary": 5,
+  "outer_fold_protocol": "StratifiedGroupKFold on base scenario: a scenario's 8 variants are always in the same fold",
+  "inner_selection": "grouped inner CV (3 folds) on the training part only; the C x PCA grid never sees the outer test part or all 160 rows",
+  "c_grid": [
+    0.03,
+    0.3,
+    3.0
+  ],
+  "pca_grid": [
+    0,
+    32
+  ],
+  "arm_definition": "Y = 1 iff the authorising person IS the owner of the requested entry; a scenario's variants differ ONLY in that name",
+  "selected_layer_arm": {
+    "auroc": 0.98,
+    "balanced_accuracy": 0.90625,
+    "fold_choices": [
+      {
+        "fold": 0,
+        "layer": 6,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 1,
+        "layer": 12,
+        "C": 0.3,
+        "pca": 0
+      },
+      {
+        "fold": 2,
+        "layer": 13,
+        "C": 0.03,
+        "pca": 0
+      },
+      {
+        "fold": 3,
+        "layer": 13,
+        "C": 0.03,
+        "pca": 0
+      },
+      {
+        "fold": 4,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      }
+    ],
+    "layer_choice_counts": {
+      "6": 1,
+      "12": 1,
+      "13": 2,
+      "4": 1
+    }
+  },
+  "per_layer": {
+    "0": {
+      "auroc": 0.47203125,
+      "balanced_accuracy": 0.4875
+    },
+    "1": {
+      "auroc": 0.6228125,
+      "balanced_accuracy": 0.5875
+    },
+    "2": {
+      "auroc": 0.59234375,
+      "balanced_accuracy": 0.5687500000000001
+    },
+    "3": {
+      "auroc": 0.77875,
+      "balanced_accuracy": 0.7
+    },
+    "4": {
+      "auroc": 0.8409375,
+      "balanced_accuracy": 0.74375
+    },
+    "5": {
+      "auroc": 0.87421875,
+      "balanced_accuracy": 0.775
+    },
+    "6": {
+      "auroc": 0.93828125,
+      "balanced_accuracy": 0.8500000000000001
+    },
+    "7": {
+      "auroc": 0.895625,
+      "balanced_accuracy": 0.825
+    },
+    "8": {
+      "auroc": 0.853671875,
+      "balanced_accuracy": 0.7625
+    },
+    "9": {
+      "auroc": 0.87015625,
+      "balanced_accuracy": 0.8
+    },
+    "10": {
+      "auroc": 0.88921875,
+      "balanced_accuracy": 0.825
+    },
+    "11": {
+      "auroc": 0.885625,
+      "balanced_accuracy": 0.7875000000000001
+    },
+    "12": {
+      "auroc": 0.9709375,
+      "balanced_accuracy": 0.9125
+    },
+    "13": {
+      "auroc": 0.99859375,
+      "balanced_accuracy": 0.975
+    },
+    "14": {
+      "auroc": 1.0,
+      "balanced_accuracy": 0.95625
+    },
+    "15": {
+      "auroc": 1.0,
+      "balanced_accuracy": 0.99375
+    },
+    "16": {
+      "auroc": 1.0,
+      "balanced_accuracy": 1.0
+    },
+    "17": {
+      "auroc": 1.0,
+      "balanced_accuracy": 1.0
+    },
+    "18": {
+      "auroc": 1.0,
+      "balanced_accuracy": 1.0
+    },
+    "19": {
+      "auroc": 1.0,
+      "balanced_accuracy": 1.0
+    },
+    "20": {
+      "auroc": 0.99953125,
+      "balanced_accuracy": 0.9875
+    },
+    "21": {
+      "auroc": 0.9990625,
+      "balanced_accuracy": 0.99375
+    },
+    "22": {
+      "auroc": 0.99890625,
+      "balanced_accuracy": 0.9875
+    },
+    "23": {
+      "auroc": 0.9990625,
+      "balanced_accuracy": 0.9875
+    },
+    "24": {
+      "auroc": 0.9984375,
+      "balanced_accuracy": 0.9875
+    },
+    "25": {
+      "auroc": 0.99734375,
+      "balanced_accuracy": 0.9875
+    },
+    "26": {
+      "auroc": 0.99859375,
+      "balanced_accuracy": 0.98125
+    },
+    "27": {
+      "auroc": 0.998125,
+      "balanced_accuracy": 0.96875
+    }
+  },
+  "per_layer_note": "diagnostic curve only: each layer gets its own inner-CV hyper-parameters, so it is not a like-for-like ranking against the selected-layer arm",
+  "early_layer_arm": {
+    "layer": 0,
+    "auroc": 0.47203125,
+    "balanced_accuracy": 0.4875
+  },
+  "tfidf_arm": {
+    "auroc": 0.50171875,
+    "balanced_accuracy": 0.53125,
+    "note": "vectoriser fitted on the training text only inside each fold"
+  },
+  "name_control_arm": {
+    "auroc": 0.5,
+    "balanced_accuracy": 0.5
+  },
+  "selected_layer_arm_loo": {
+    "auroc": 0.89046875,
+    "balanced_accuracy": 0.8125,
+    "fold_choices": [
+      {
+        "fold": 0,
+        "layer": 3,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 1,
+        "layer": 3,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 2,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 3,
+        "layer": 3,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 4,
+        "layer": 3,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 5,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 6,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 7,
+        "layer": 3,
+        "C": 0.3,
+        "pca": 0
+      },
+      {
+        "fold": 8,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 9,
+        "layer": 3,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 10,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 11,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 12,
+        "layer": 2,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 13,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 14,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 15,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 16,
+        "layer": 3,
+        "C": 0.3,
+        "pca": 0
+      },
+      {
+        "fold": 17,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 18,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      },
+      {
+        "fold": 19,
+        "layer": 4,
+        "C": 3.0,
+        "pca": 0
+      }
+    ],
+    "layer_choice_counts": {
+      "3": 7,
+      "4": 12,
+      "2": 1
+    }
+  },
+  "generated_utc": "2026-09-29T03:21:22+00:00",
+  "interpretation_guard": "Y is relation matching, because a scenario's variants differ only in the authorising name. Decoding it shows the relation is present in the unsteered state; it does NOT establish a privacy-specific mechanism and does NOT show the model uses it. 20 scenarios remain development data — cross-validation does not make them an unseen formal test set.",
+  "permutation_null": {
+    "n": 30,
+    "mean": 0.6066223958333335,
+    "std": 0.03833527057562444,
+    "p95": 0.6660546875,
+    "max": 0.6859375,
+    "observed_auroc": 0.98,
+    "empirical_p": 0.0
+  }
+}

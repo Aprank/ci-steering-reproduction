@@ -92,6 +92,21 @@ COMMANDS = {
         "out": None,
         "help": "check whether the 270 evaluation scenarios are independent stories",
     },
+    "align-activations": {
+        "script": "src/verify_activation_alignment.py",
+        "out": "activation_alignment",
+        "help": "freeze the input<->state correspondence (token limits, row mapping, truncation)",
+    },
+    "label-baseline": {
+        "script": "src/label_baseline_behavior.py",
+        "out": "baseline_labels",
+        "help": "full behaviour labels for the baseline replies (needs an API key)",
+    },
+    "probe": {
+        "script": "src/probe_generation_state.py",
+        "out": "probe",
+        "help": "grouped out-of-fold norm probe on the unsteered generation state",
+    },
 }
 
 PATH_ARGS = {
@@ -99,6 +114,9 @@ PATH_ARGS = {
     "lda": ("--output-dir", "lda_v3"),
     "blind": ("--out-dir", "blind_review"),
     "judge-validate": ("--out-dir", "judge_validation"),
+    "align-activations": ("--out-dir", "activation_alignment"),
+    "label-baseline": ("--out-dir", "baseline_labels"),
+    "probe": ("--out-dir", "probe"),
 }
 
 

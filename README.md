@@ -73,7 +73,11 @@
 │   ├── validate_judge_real.py      ★ 真实 API 小样本评委核对
 │   ├── verify_grouping_claims.py   ★ 三参数刺激集重叠度量
 │   ├── verify_scenario_independence.py ★ 场景独立性与盲审集合核算
-│   ├── pilot_run_v3.py             ★ 开发集试跑（三层条件 + 生成前激活 + 无需评委诊断）
+│   ├── verify_activation_alignment.py ★ 冻结输入↔激活状态对应（token 上限/行映射/截断）
+│   ├── evaluation/behavior_labeler.py ★ 行为标注器（多字段严格 schema，备用仪器）
+│   ├── label_baseline_behavior.py  ★ 160 条基线行为标签 + 人工核查队列
+│   ├── probe_generation_state.py   ★ 分组 OOF 规范探针（逐层/对照/置换零假设）
+│   ├── pilot_run_v3.py             ★ 开发集试跑（三层条件 + 生成前激活 + 终止原因 + 无需评委诊断）
 │   ├── audit_leakage.py            新增：unknown-aware 泄漏审计
 │   ├── ci_sign_determination.py    新增：CI 方向符号穷举
 │   ├── evaluation/ci_eval.py       v1 评委（历史保留，勿用其默认入口）
@@ -90,7 +94,8 @@
 
 | 文件 | 内容 |
 |---|---|
-| **`ROUND3_REPORT.md`** | **第三轮：复核报告 P1×5 / P2×3 逐条核验与修复；评委协议 v2.1、场景数据 v3、盲审包 v2、联合分组 LDA、真实分组 bootstrap、9 例真实 API 评委核对** — 每条声明标注 实测/代码检查/推断/未验证 |
+| **`ROUND4_REPORT.md`** | **第四轮：冻结输入↔状态对应（发现 45% 回答曾被 256-token 上限截断）、160 条完整基线行为标签、分组 OOF 生成状态规范探针（未见场景 AUROC 0.980）、规范预测×行为联表与分支判断** — 含需人工操作的部分清单 |
+| `ROUND3_REPORT.md` | **第三轮：复核报告 P1×5 / P2×3 逐条核验与修复；评委协议 v2.1、场景数据 v3、盲审包 v2、联合分组 LDA、真实分组 bootstrap、9 例真实 API 评委核对** — 每条声明标注 实测/代码检查/推断/未验证 |
 | `ROUND2_REPORT.md` | 第二轮（T0–T7）：评委授权感知修复、最终记录、LDA 更正、盲审包、关系型场景 |
 | `AUDIT_REPORT.md` | 第一轮评测审计（步骤 1–5）；**部分声明已在 ROUND2/ROUND3 报告中降级或更正** |
 | `EXPERIMENT_REPORT.md` | 完整复现实验报告 |
@@ -164,6 +169,9 @@ python src/pipeline.py lda --permutations 60
 python src/pipeline.py judge-validate --cases 9    # 需 DEEPSEEK_API_KEY
 python src/pilot_run_v3.py --n-scenarios 2        # GPU 冒烟（约 1 分钟）
 python src/pilot_run_v3.py --n-scenarios 20       # 开发集全量（约 6 分钟）
+python src/pipeline.py align-activations          # 冻结输入↔状态（无需 GPU）
+python src/pipeline.py label-baseline             # 行为标签（需 API key）
+python src/pipeline.py probe --permutations 30    # 规范探针（CPU，较慢）
 ```
 
 **路径约定**：`outputs/` 是工作产物；`results/` 是公开仓库中的镜像。CLI 运行前会打印解析后的

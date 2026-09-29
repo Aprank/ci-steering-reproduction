@@ -177,20 +177,22 @@ def main():
 
     # ---------------- generate ----------------
     results = defaultdict(dict)
+    gen_meta = defaultdict(dict)
     timings = {}
     for cond in args.conditions:
         print(f"\n[pilot] === {cond} ===")
         t0 = time.time()
-        if cond == "No Steering":
-            outs = helper.generate(prompts, max_new_tokens=args.max_new_tokens,
-                                   temperature=0.0, batch_size=args.batch_size)
-        else:
-            outs = steerers[cond].generate(prompts, max_new_tokens=args.max_new_tokens,
-                                           temperature=0.0, batch_size=args.batch_size)
+        hook = None if cond == "No Steering" else steerers[cond]._make_steering_hook()
+        outs, metas = helper.generate_with_meta(
+            prompts, max_new_tokens=args.max_new_tokens, temperature=0.0,
+            batch_size=args.batch_size, steering_hook=hook)
         timings[cond] = round(time.time() - t0, 1)
-        for r, o in zip(rows, outs):
+        for r, o, m in zip(rows, outs, metas):
             results[cond][r["input_id"]] = o
-        print(f"[pilot] {cond}: {len(outs)} responses in {timings[cond]}s")
+            gen_meta[cond][r["input_id"]] = m
+        n_cap = sum(1 for m in metas if m["hit_max_new_tokens"])
+        print(f"[pilot] {cond}: {len(outs)} responses in {timings[cond]}s "
+              f"| stopped at the {args.max_new_tokens}-token cap: {n_cap}")
 
     # ---------------- write per-sample records ----------------
     tsv = []
@@ -207,6 +209,7 @@ def main():
                 "recipient": r["recipient"], "record_id": r["record_id"],
                 "protected_fact": r["protected_fact"], "norm_label": r["norm_label"],
                 "response": resp, "response_sha256_16": hashlib.sha256(resp.encode()).hexdigest()[:16],
+                **gen_meta[cond][r["input_id"]],
                 **diag,
             })
     with open(out_dir / "responses.jsonl", "w", encoding="utf-8") as f:
@@ -236,6 +239,12 @@ def main():
             "mean_matched_identifiers": (
                 rate(sum(x["n_matched"] for x in has_id), len(has_id)) if has_id else None),
             "empty_responses": sum(1 for x in sub if not x["response"].strip()),
+            # a reply that stops at the token cap is censored: its disclosure and task
+            # success are not comparable to a reply that finished on its own
+            "n_hit_token_cap": sum(1 for x in sub if x.get("hit_max_new_tokens")),
+            "n_stopped_on_eos": sum(1 for x in sub if x.get("stopped_on_eos")),
+            "token_cap": args.max_new_tokens,
+            "hit_token_cap_ids": [x["input_id"] for x in sub if x.get("hit_max_new_tokens")],
         }
 
     # paired contrast against No Steering on the unauthorised inputs
@@ -270,6 +279,12 @@ def main():
         "conditions": args.conditions,
         "seconds": {"activations": round(act_secs, 1), "generation": timings,
                     "total": round(time.time() - t_start, 1)},
+        "termination_metadata": {
+            "recorded": ["n_new_tokens", "max_new_tokens", "hit_max_new_tokens",
+                         "stopped_on_eos", "finish_reason"],
+            "why": ("a reply truncated at the token cap is censored with respect to "
+                    "disclosure and task success; non-empty output cannot rule that out"),
+        },
         "pregen_activations": {
             "file": str(act_dir / "pregen_all_layers.pt"),
             "layers": len(acts), "shape": list(layer_shape),
