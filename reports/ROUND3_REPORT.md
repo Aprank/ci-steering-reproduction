@@ -14,7 +14,7 @@
 核验过程中另发现 **3 个复核未提及、但更严重的问题**（三参数刺激集 100% 共用基础场景、
 嵌套协议的行索引错位、bootstrap 的 `unit` 参数完全未生效）。
 **T1 评委门槛现已通过**：9 例真实 API 核对中，合法授权披露零误判、violation 判定零错误。
-**GPU 生成实验未启动**（用户明确指示暂缓），全部离线工作与 API 核对已完成。
+**GPU 生成实验已执行**：2 场景冒烟 + 20 场景开发集全量试跑（480 条回答，333 s），并给出无需评委的精确字段披露诊断。
 
 ---
 
@@ -293,20 +293,69 @@ v1/v2 历史脚本**保留但不被 CLI 调用**，其缺陷已在各自文件�
 
 ---
 
-## 7. 下一阶段（GPU 生成）已就绪的资源与计划
+## 7. GPU 冒烟与开发集试跑（已执行，实测）
 
-**资源实测**（本轮末尾查询）：GPU 1（RTX 5090 32GB，空闲）与 GPU 3（RTX 6000D 85GB，空闲）可用；GPU 0/2/5 被他人占用（勿动），GPU 4 有他人低负载进程。模型 Qwen2.5-7B-Instruct 本地已就绪。
+**资源**：GPU 1（RTX 5090 32GB，空闲）本轮实际使用；GPU 3（RTX 6000D 85GB）空闲备用。GPU 0/2/5 被他人占用（未动）。显存峰值 **16.34 GB**，模型 Qwen2.5-7B-Instruct。
 
-**待用户放行后按以下顺序执行**（复核执行顺序 5、6）：
+**执行链路**（`src/pilot_run_v3.py`）：生成前逐层激活采集 → 三层条件生成 → 无需评委的精确字段披露诊断。
 
-1. **2–3 场景冒烟**：验证"生成 + 生成前激活采集"链路与显存占用，确认三层条件（No Steering / Standard / CI-Parametric）均可跑通。
-2. **冻结开发数据全量**：`data/pilot_v3/scenarios_v3.jsonl`（160 输入 / 20 独立场景）。
-3. **不依赖评委的诊断**：精确字段披露诊断（回答中是否逐字出现受保护细节，如 `$18,450.00`）——该指标不需语义评委，可先行产出。
-4. **对照组**：TF-IDF/词袋、早层探针、随机标签探针、姓名 one-hot（§3.2 已在数据层面完成，模型层面待跑）。
-5. **选层与阈值只在验证集上拟合**（绝不使用测试集）；分组按 `group_id`（base scenario）。
-6. **语义评估（v2.1 评委）标注为"待裁定"**，直到 §3.4 的可争论字段有人工裁定。
+| 步骤 | 实测 |
+|---|---|
+| 冒烟（2 场景 / 16 输入） | 55.7 s 全链路通过 |
+| 全量开发集（20 场景 / 160 输入 = 480 条回答） | **333.4 s**；三层条件各 160 条，**无空回答** |
+| 生成前激活 | 28 层 × 160 × 3584，1.4 s（16 输入时）→ `pregen_activations/pregen_all_activations.pt` |
+| 每条件耗时 | 103.5 / 106.9 / 109.2 s |
 
-> 按复核意见，"尚未跑过"本身不作为再次请示的理由；此处仅报告**具体缺少的资源**：仅需用户确认可以占用 GPU 1 或 GPU 3。
+### 7.1 无需评委的精确字段披露诊断（实测）
+
+受保护细节中的**硬标识符**（金额、记录号、日期、IP）是否逐字出现在回答中：
+
+| 条件 | 未授权输入上的泄露率 | 已授权输入上 | 配对比基线 |
+|---|---|---|---|
+| No Steering | **12/30 = 40.0%** | 29/30 = 96.7% | — |
+| Standard Steering | **12/30 = 40.0%** | 29/30 = 96.7% | 0 变化（both=12, only_base=0, only_method=0） |
+| CI-Parametric (all) | **11/30 = 36.7%** | 29/30 = 96.7% | 净减少 **1 例**（both=11, only_base=1, only_method=0） |
+
+> **必须随同声明的覆盖度限制（实测）**：只有 **30/80（37.5%）** 的未授权输入含有硬标识符；其余 50 条受保护细节为纯文字（如 "an approved medical leave"）。因此该诊断的分母只有 30，**它低估披露率，不能当作泄露率报告**。
+> **n 极小**：1 例差异在 30 例上做不出任何显著性判断。这是**开发集**，不是留出测试集。
+
+### 7.2 显式政策设计的有效性（实测）
+
+| 观测 | 数值 |
+|---|---|
+| 未授权条件下回答**明确援引授权/许可/政策** | No Steering 67/80（83.8%）· Standard 66/80（82.5%）· CI 68/80（85.0%） |
+| 已授权条件下确实披露（有标识符的 30 条） | 29/30（96.7%） |
+| 未授权 − 已授权 的行为落差 | ≈ 57 个百分点 |
+
+设计按预期生效：模型**确实在做"授权者是否就是该条目所有人"的关系判断**，并会在拒绝时逐字引用政策规则（例如 "an authorization given by one person (Derek Vance) does not cover another person's entry (Maya Okonkwo). Therefore, I cannot summarize…"）。这正是 v3 用显式政策要换来的**标签无歧义**。
+
+### 7.3 任务强度对政策遵循的挤压（实测，初步）
+
+"完整性/穷尽"措辞（`integrity`）对比普通措辞（`normal`），在未授权输入上：
+
+| 条件 | normal | integrity |
+|---|---|---|
+| No Steering | 5/15 = 33.3% | **7/15 = 46.7%** |
+| CI-Parametric (all) | 5/15 = 33.3% | 6/15 = 40.0% |
+
+即"要求完整"这一看似无害的措辞会把基线泄露率抬高约 13 个百分点，而现有的 CI 参数化引导只把它压回 6.7 个百分点。**这是本轮出现的最有研究价值的行为信号**——但它建立在 15 例/格之上，**仅为初步观察，未做任何统计检验，也未用评委复核**。
+
+### 7.4 引导的文本影响面（实测）
+
+- No Steering 与 CI-Parametric 的回答**逐字相同者 51/160（31.9%）**。
+- 结合 §7.1 的 1 例差异：**α=1.0 的现有引导在本任务上几乎没有改变行为**。
+- 限定：这只说明该实现/该强度**没有观察到改善**，不构成对原论文的否证；且本轮尚未做 α 扫描与权重型基线对照。
+
+### 7.5 仍未做
+
+| 项 | 状态 |
+|---|---|
+| 语义评委（v2.1）在本试跑数据上的评分 | **未做**（§3.4 的可争论字段需人工裁定后才宜产出） |
+| 选层与阈值在验证集上拟合 | **未做**；本轮用的是既有读者（层 23–27），未重新拟合 |
+| 模型层面对照组（早层探针、随机标签、姓名 one-hot） | **未做**（数据层面已完成，见 §3.2） |
+| α 扫描、权重型基线、Mistral | **未做** |
+| 正式 ~200 场景预注册 | **按复核要求暂缓** |
+
 
 ---
 
@@ -328,8 +377,11 @@ outputs/research_next_round/round3_2026-09-30/
   blind_review/{mapping.json(受限),annotation_template_*.csv,INSTRUCTIONS.md}
   blind_review/blind_package_integrity.json 连接校验、成员关系、情境完整性、故事重复
   lda_v3/lda_v3.json, lda_v3.png            联合分组 × 三协议 × 层稳健性 × 置换对照
+  pilot_run/responses.jsonl                 480 条回答（3 条件 × 160 输入）
+  pilot_run/run.json                        配置/耗时/显存/激活形状
+  pilot_run/pregen_activations/pregen_all_activations.pt   28 层 × 160 × 3584
 ```
 
-**新增/修改的脚本**：`src/pipeline.py`、`src/validate_judge_real.py`、`src/pilot_scenarios_v3.py`、`src/build_blind_package_v2.py`、`src/subspace_selectivity_v3.py`、`src/verify_grouping_claims.py`、`src/verify_scenario_independence.py`；修改：`src/evaluation/ci_judge_v2.py`（v2.1）、`src/finalise_round1.py`（分组 bootstrap）、`tests/test_ci_judge_v2.py`。
+**新增/修改的脚本**：`src/pilot_run_v3.py`、`src/pipeline.py`、`src/validate_judge_real.py`、`src/pilot_scenarios_v3.py`、`src/build_blind_package_v2.py`、`src/subspace_selectivity_v3.py`、`src/verify_grouping_claims.py`、`src/verify_scenario_independence.py`；修改：`src/evaluation/ci_judge_v2.py`（v2.1）、`src/finalise_round1.py`（分组 bootstrap）、`tests/test_ci_judge_v2.py`。
 
 **注意**：`mapping.json` 含盲审 id 到来源的映射，**不得进入公开仓库**。

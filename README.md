@@ -73,6 +73,7 @@
 │   ├── validate_judge_real.py      ★ 真实 API 小样本评委核对
 │   ├── verify_grouping_claims.py   ★ 三参数刺激集重叠度量
 │   ├── verify_scenario_independence.py ★ 场景独立性与盲审集合核算
+│   ├── pilot_run_v3.py             ★ 开发集试跑（三层条件 + 生成前激活 + 无需评委诊断）
 │   ├── audit_leakage.py            新增：unknown-aware 泄漏审计
 │   ├── ci_sign_determination.py    新增：CI 方向符号穷举
 │   ├── evaluation/ci_eval.py       v1 评委（历史保留，勿用其默认入口）
@@ -161,6 +162,8 @@ python src/pipeline.py scenarios          # -> data/pilot_v3/
 python src/pipeline.py blind --n-random 50
 python src/pipeline.py lda --permutations 60
 python src/pipeline.py judge-validate --cases 9    # 需 DEEPSEEK_API_KEY
+python src/pilot_run_v3.py --n-scenarios 2        # GPU 冒烟（约 1 分钟）
+python src/pilot_run_v3.py --n-scenarios 20       # 开发集全量（约 6 分钟）
 ```
 
 **路径约定**：`outputs/` 是工作产物；`results/` 是公开仓库中的镜像。CLI 运行前会打印解析后的
